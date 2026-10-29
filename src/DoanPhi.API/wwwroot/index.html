@@ -1,0 +1,2779 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biểu Mẫu Thu Đoàn Phí - Hội Phí Năm Học 2026 - 2027</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%22100%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>🚩</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Font: Plus Jakarta Sans / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#b9ddfe',
+              300: '#7cc2fd',
+              400: '#36a3fa',
+              500: '#0084f7',
+              600: '#005baa', // Youth Blue Core
+              700: '#004787',
+              800: '#033d70',
+              900: '#08335d',
+              950: '#05203e',
+            },
+            youth: {
+              red: '#e31b23',
+              gold: '#f59e0b',
+              emerald: '#10b981',
+              cyan: '#06b6d4',
+            }
+          },
+          animation: {
+            'aurora': 'aurora 20s linear infinite',
+            'border-beam': 'border-beam 6s linear infinite',
+            'shimmer': 'shimmer 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-slow': 'float 8s ease-in-out infinite',
+            'float-delayed': 'float 9s ease-in-out 3s infinite',
+            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+          },
+          keyframes: {
+            aurora: {
+              '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+              '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
+              '66%': { transform: 'translate(-25px, 20px) scale(0.95)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(200%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.9', transform: 'scale(1.015)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Animate UI primitives & effects */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      background-color: #0b1120;
+      color: #0f172a;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Ambient animated mesh backdrop */
+    .mesh-gradient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 0%, #0d2247 0%, #081124 50%, #030712 100%);
+    }
+
+    .aurora-blob {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(80px);
+      opacity: 0.45;
+      mix-blend-mode: screen;
+      will-change: transform;
+    }
+
+    /* Dot grid overlay inspired by animate-ui */
+    .bg-dot-grid {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Animate UI: Border Beam Component */
+    .border-beam-container {
+      position: relative;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px -15px rgba(0, 40, 100, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    }
+
+    /* Shimmer Button Effect */
+    .shimmer-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 2.8s infinite;
+      pointer-events: none;
+    }
+
+    /* Smooth Spring Tabs */
+    .tab-slider-bg {
+      transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Custom Scrollbar */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: rgba(241, 245, 249, 0.6);
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #94a3b8;
+    }
+
+    /* Spring Modal Transitions */
+    .spring-modal {
+      animation: modalSpring 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes modalSpring {
+      0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(12px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="antialiased py-3 sm:py-6 px-3 sm:px-6 relative selection:bg-brand-500 selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- ANIMATED AMBIENT BACKGROUND (ANIMATE-UI)   -->
+  <!-- ========================================== -->
+  <div class="mesh-gradient-bg">
+    <!-- Aurora Blob 1: Youth Blue -->
+    <div class="aurora-blob w-[500px] h-[500px] bg-brand-600/35 -top-24 -left-20 animate-aurora"></div>
+    <!-- Aurora Blob 2: Cyan & Indigo -->
+    <div class="aurora-blob w-[550px] h-[550px] bg-cyan-500/25 top-1/4 -right-28 animate-float-delayed"></div>
+    <!-- Aurora Blob 3: Youth Red / Warm Glow -->
+    <div class="aurora-blob w-[450px] h-[450px] bg-rose-600/20 bottom-10 left-1/4 animate-float-slow"></div>
+    <!-- Subtle Grid Overlay -->
+    <div class="absolute inset-0 bg-dot-grid"></div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed top-5 right-5 z-[150] flex flex-col gap-2.5 pointer-events-none max-w-sm w-full"></div>
+
+  <!-- Main Content Wrapper -->
+  <div class="relative z-10 max-w-2xl mx-auto">
+
+    <!-- ========================================== -->
+    <!-- TOP NAVBAR: GLASSMORPHISM & ROLE CONTROL   -->
+    <!-- ========================================== -->
+    <nav class="flex items-center justify-between py-2.5 px-4 mb-4 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300">
+      <div class="flex items-center gap-3">
+        <div class="relative group cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-600 via-red-500 to-amber-500 text-white flex items-center justify-center text-base shadow-lg shadow-red-500/30 group-hover:scale-105 transition-transform duration-300">
+            🚩
+          </div>
+          <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 border-2 border-slate-900 rounded-full animate-ping"></span>
+          <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-xs sm:text-sm text-white tracking-tight block">Cổng Thu Đoàn Phí Trực Tuyến</span>
+            <span class="hidden sm:inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-500/20 text-brand-300 border border-brand-500/30">2026 - 2027</span>
+          </div>
+          <span class="text-[11px] text-slate-400 font-medium block">Đoàn Thanh Niên & Hội Sinh Viên</span>
+        </div>
+      </div>
+
+      <!-- Role Switch Section -->
+      <div id="navRoleSection" class="flex items-center gap-2">
+        <!-- Guest Button -->
+        <button 
+          type="button"
+          id="btnGuestLogin" 
+          onclick="openLoginModal()" 
+          class="shimmer-btn group relative px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white text-xs font-bold transition-all duration-300 active:scale-95 flex items-center gap-2 shadow-sm">
+          <i class="fa-solid fa-user-shield text-brand-300 group-hover:rotate-12 transition-transform"></i>
+          <span>Quản trị viên</span>
+        </button>
+
+        <!-- Authenticated Admin Group (Hidden by default) -->
+        <div id="adminNavGroup" class="hidden flex items-center gap-2">
+          <button 
+            type="button"
+            onclick="openAdminDashboard()" 
+            class="shimmer-btn px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500 text-white text-xs font-black shadow-lg shadow-brand-500/30 hover:brightness-110 active:scale-95 transition-all flex items-center gap-2 border border-white/20">
+            <i class="fa-solid fa-gauge-high text-cyan-200"></i>
+            <span>Bảng Quản Trị</span>
+          </button>
+          <button 
+            type="button"
+            onclick="logoutAdmin()" 
+            title="Đăng xuất khỏi quyền quản trị" 
+            class="p-2 px-2.5 rounded-xl bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/30 text-rose-300 text-xs font-bold transition-all active:scale-95">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- FORM CLOSED ALERT BANNER                   -->
+    <!-- ========================================== -->
+    <div id="formClosedBanner" class="hidden mb-4 p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-rose-600/90 via-red-600/90 to-amber-600/90 backdrop-blur-xl text-white shadow-2xl border border-rose-400/30 flex items-start gap-4">
+      <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-xl shrink-0 shadow-inner">
+        <i class="fa-solid fa-lock text-yellow-300 animate-bounce"></i>
+      </div>
+      <div class="flex-1">
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] font-black uppercase tracking-wider bg-black/25 px-2.5 py-0.5 rounded-full text-rose-100">
+            Tạm dừng tiếp nhận
+          </span>
+        </div>
+        <h3 class="text-sm sm:text-base font-extrabold mt-1 tracking-tight">
+          Cổng Tiếp Nhận Đoàn Phí Hiện Đang Tạm Đóng
+        </h3>
+        <p id="formClosedReasonText" class="text-xs text-rose-100 mt-1 leading-relaxed">
+          Hệ thống đã kết thúc đợt thu hoặc đang tạm ngừng để quản trị viên kiểm tra số liệu.
+        </p>
+        <div class="mt-2 text-[11px] font-medium bg-black/20 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl">
+          <i class="fa-solid fa-circle-info text-yellow-300"></i>
+          Vui lòng liên hệ Ban Chấp hành Chi đoàn để được hỗ trợ.
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- HERO HEADER: ANIMATE-UI GRADIENT CARD      -->
+    <!-- ========================================== -->
+    <header class="relative rounded-3xl p-6 sm:p-8 text-white shadow-2xl mb-6 overflow-hidden border border-white/20 bg-gradient-to-br from-brand-700 via-brand-600 to-indigo-800">
+      <!-- Glow effect elements inside hero -->
+      <div class="absolute -right-12 -top-12 w-56 h-56 bg-cyan-400/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-12 -bottom-12 w-56 h-56 bg-amber-400/25 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute inset-0 bg-dot-grid opacity-25 pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <div class="flex items-center justify-between mb-4 flex-wrap gap-2.5">
+          <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase border border-white/20 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+            <span>Đoàn - Hội Sinh Viên</span>
+          </div>
+          <span class="text-xs bg-gradient-to-r from-amber-400 to-yellow-300 text-yellow-950 font-black px-3.5 py-1.5 rounded-full shadow-lg shadow-amber-500/20 flex items-center gap-1.5">
+            <i class="fa-regular fa-calendar-check"></i> Năm học 2026 - 2027
+          </span>
+        </div>
+
+        <h1 class="text-xl sm:text-3xl font-black leading-tight tracking-tight mb-2 uppercase drop-shadow-md">
+          Phiếu Xác Nhận Nộp Đoàn Phí - Hội Phí
+        </h1>
+        <p class="text-blue-100/90 text-xs sm:text-sm font-normal leading-relaxed max-w-xl">
+          Hệ thống hỗ trợ quét mã VietQR tự động điền số tiền, chuẩn hóa nội dung chuyển khoản và gửi minh chứng đối soát tức thì.
+        </p>
+
+
+      </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN FORM: ANIMATE-UI BORDER BEAM CARD     -->
+    <!-- ========================================== -->
+    <main class="border-beam-container p-5 sm:p-8 mb-6">
+      <form id="feeForm" class="space-y-7" onsubmit="handleFormSubmit(event)">
+
+        <!-- SECTION 1: THÔNG TIN SINH VIÊN -->
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-sm sm:text-base font-extrabold text-slate-800 flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xs font-black shadow-xs">1</span>
+              Thông Tin Sinh Viên
+            </h2>
+            <span class="text-[11px] text-slate-400 font-medium">* Bắt buộc nhập chính xác</span>
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Full Name -->
+            <div>
+              <label for="fullName" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                Họ và Tên <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative group">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 group-focus-within:text-brand-600 transition-colors pointer-events-none">
+                  <i class="fa-regular fa-user"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName"
+                  placeholder="Ví dụ: Nguyễn Văn An"
+                  required
+                  class="w-full pl-10 pr-3.5 py-3 text-sm bg-slate-50/80 hover:bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+                  oninput="updateQRData()"
+                />
+              </div>
+            </div>
+
+            <!-- Student ID -->
+            <div>
+              <label for="studentId" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                Mã Sinh Viên (MSSV) <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative group">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 group-focus-within:text-brand-600 transition-colors pointer-events-none">
+                  <i class="fa-solid fa-id-card"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="studentId" 
+                  name="studentId"
+                  placeholder="Ví dụ: 20261234"
+                  required
+                  class="w-full pl-10 pr-3.5 py-3 text-sm bg-slate-50/80 hover:bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-mono font-semibold uppercase text-slate-800"
+                  oninput="updateQRData()"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-slate-100" />
+
+        <!-- SECTION 2: TÌNH TRẠNG ĐOÀN & ĐỊNH MỨC (ANIMATE-UI TABS) -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-sm sm:text-base font-extrabold text-slate-800 flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xs font-black shadow-xs">2</span>
+              Tình Trạng Đoàn & Thời Gian
+            </h2>
+            <button 
+              type="button" 
+              onclick="toggleBreakdownModal()" 
+              class="text-xs text-brand-600 hover:text-brand-700 font-bold flex items-center gap-1.5 hover:underline px-2.5 py-1 rounded-lg hover:bg-brand-50 transition">
+              <i class="fa-solid fa-calculator text-brand-500"></i> Bảng định mức
+            </button>
+          </div>
+          <p class="text-xs text-slate-500 mb-3.5">
+            Sinh viên Chưa vào Đoàn sẽ được miễn đóng Đoàn phí 2.000đ/tháng theo quy định.
+          </p>
+
+          <!-- Interactive Segmented Selector -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <!-- Option 1: Đã vào Đoàn -->
+            <label 
+              id="labelDoanVienTrue"
+              onclick="selectMembershipOption('da_vao_doan')"
+              class="group relative cursor-pointer p-4 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between border-brand-600 bg-brand-50/60 shadow-md shadow-brand-500/10">
+              <input type="radio" name="membershipStatus" id="doanVienTrue" value="da_vao_doan" checked class="hidden" />
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-rose-500 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-rose-500/30 group-hover:scale-105 transition-transform">
+                  <i class="fa-solid fa-shield-heart"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-extrabold text-slate-900">Đã vào Đoàn</div>
+                  <div class="text-[11px] text-slate-500">Đoàn phí + Hội phí + Quỹ CT (108k)</div>
+                </div>
+              </div>
+              <div id="checkIconTrue" class="text-brand-600 text-xl transition-all scale-100 opacity-100">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+            </label>
+
+            <!-- Option 2: Chưa vào Đoàn -->
+            <label 
+              id="labelDoanVienFalse"
+              onclick="selectMembershipOption('chua_vao_doan')"
+              class="group relative cursor-pointer p-4 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between border-slate-200 hover:border-slate-300 bg-white">
+              <input type="radio" name="membershipStatus" id="doanVienFalse" value="chua_vao_doan" class="hidden" />
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-amber-500/30 group-hover:scale-105 transition-transform">
+                  <i class="fa-solid fa-user-clock"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-extrabold text-slate-900">Chưa vào Đoàn</div>
+                  <div class="text-[11px] text-slate-500">Miễn đoàn phí, chỉ đóng 84.000đ</div>
+                </div>
+              </div>
+              <div id="checkIconFalse" class="text-brand-600 text-xl transition-all scale-75 opacity-0">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+            </label>
+          </div>
+
+          <!-- Thời hạn đóng -->
+          <div class="bg-slate-50/80 border border-slate-200/80 rounded-2xl p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-base shrink-0 font-bold">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-800 block">Thời hạn đóng phí</span>
+                <span class="text-[11px] text-slate-500">Trọn gói cả năm học (12 tháng)</span>
+              </div>
+            </div>
+            <span class="text-xs font-black bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs">
+              <i class="fa-solid fa-check text-[10px]"></i> Cố định cả năm
+            </span>
+          </div>
+        </div>
+
+        <hr class="border-slate-100" />
+
+        <!-- SECTION 3: MÃ VIETQR & THANH TOÁN (ANIMATE-UI CARD) -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="text-sm sm:text-base font-extrabold text-slate-800 flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xs font-black shadow-xs">3</span>
+              Mã QR & Chi Tiết Thanh Toán
+            </h2>
+            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              <i class="fa-solid fa-bolt text-amber-500"></i> VietQR 247
+            </span>
+          </div>
+
+          <div class="rounded-3xl p-5 sm:p-6 border border-brand-100 bg-gradient-to-br from-slate-50 via-brand-50/20 to-indigo-50/30 shadow-inner">
+            
+            <!-- Animated Amount Display -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-brand-100/80 gap-2">
+              <div>
+                <span class="text-xs font-medium text-slate-500">Số tiền cần thanh toán:</span>
+                <div id="statusFeeDesc" class="text-xs sm:text-sm font-bold text-slate-800 mt-0.5">
+                  Đã vào Đoàn (12 tháng)
+                </div>
+              </div>
+              <!-- Number ticker container -->
+              <div class="flex items-baseline gap-1.5">
+                <span id="totalAmountDisplay" class="text-2xl sm:text-4xl font-black text-brand-600 tracking-tight font-mono">
+                  108,000
+                </span>
+                <span class="text-base font-extrabold text-brand-800">VNĐ</span>
+              </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="mt-5 flex flex-col md:flex-row items-center gap-6">
+              
+              <!-- QR Frame with animated glow -->
+              <div class="relative shrink-0 flex flex-col items-center bg-white p-3.5 rounded-3xl shadow-xl shadow-brand-500/10 border border-slate-200 animate-pulse-subtle">
+                <div class="w-48 h-48 sm:w-52 sm:h-52 bg-slate-50 rounded-2xl overflow-hidden flex items-center justify-center relative shadow-inner">
+                  <!-- Loading spinner -->
+                  <div id="qrLoading" class="absolute inset-0 bg-white/90 backdrop-blur-xs flex flex-col items-center justify-center text-xs text-slate-500 z-10 transition-opacity">
+                    <i class="fa-solid fa-spinner fa-spin text-2xl text-brand-600 mb-2"></i>
+                    Đang tạo mã VietQR...
+                  </div>
+                  <img 
+                    id="vietQrImage" 
+                    alt="VietQR Techcombank Thai Hong Hiep"
+                    class="w-full h-full object-contain select-none"
+                  />
+                </div>
+                <div class="mt-2.5 text-center">
+                  <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-qrcode text-brand-600"></i> Quét mã bằng App ngân hàng
+                  </span>
+                </div>
+              </div>
+
+              <!-- Banking Info Fields with Copy Micro-interactions -->
+              <div class="w-full space-y-2.5 text-xs sm:text-sm">
+                <!-- Bank Name -->
+                <div class="flex items-center justify-between p-3 bg-white rounded-2xl border border-slate-200/90 shadow-2xs">
+                  <div>
+                    <span class="text-slate-400 block text-[10px] font-bold uppercase tracking-wider">Ngân hàng thụ hưởng</span>
+                    <span class="font-extrabold text-slate-800 text-sm">Techcombank (TCB)</span>
+                  </div>
+                  <span class="text-[10px] font-black bg-rose-50 text-rose-600 border border-rose-200 px-2.5 py-0.5 rounded-lg">NAPAS 247</span>
+                </div>
+
+                <!-- Account Number -->
+                <div class="flex items-center justify-between p-3 bg-white rounded-2xl border border-slate-200/90 shadow-2xs">
+                  <div>
+                    <span class="text-slate-400 block text-[10px] font-bold uppercase tracking-wider">Số tài khoản</span>
+                    <span class="font-mono font-black text-slate-900 text-sm sm:text-base tracking-wider" id="bankAccNumber">2306 2007 520</span>
+                  </div>
+                  <button 
+                    type="button" 
+                    id="btnCopyAcc"
+                    onclick="copyToClipboard('23062007520', 'Đã sao chép số tài khoản!', 'btnCopyAcc')"
+                    class="px-3 py-1.5 text-xs font-bold text-brand-600 bg-brand-50 hover:bg-brand-100 active:scale-95 rounded-xl transition-all flex items-center gap-1.5 border border-brand-100 shadow-2xs">
+                    <i class="fa-regular fa-copy"></i> <span>Sao chép</span>
+                  </button>
+                </div>
+
+                <!-- Account Name -->
+                <div class="flex items-center justify-between p-3 bg-white rounded-2xl border border-slate-200/90 shadow-2xs">
+                  <div>
+                    <span class="text-slate-400 block text-[10px] font-bold uppercase tracking-wider">Chủ tài khoản</span>
+                    <span class="font-black text-slate-800 uppercase tracking-wide" id="bankAccName">THAI HONG HIEP</span>
+                  </div>
+                  <span class="flex items-center gap-1 text-[11px] text-brand-600 font-bold bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-100">
+                    <i class="fa-solid fa-circle-check text-emerald-500"></i> Đã xác thực
+                  </span>
+                </div>
+
+                <!-- Transfer Memo -->
+                <div class="p-3 bg-white rounded-2xl border border-slate-200/90 shadow-2xs">
+                  <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-slate-400 text-[10px] font-bold uppercase tracking-wider">Nội dung chuyển khoản</span>
+                    <button 
+                      type="button" 
+                      id="btnCopyMemo"
+                      onclick="copyCurrentMemo()"
+                      class="px-2.5 py-1 text-xs font-bold text-brand-600 bg-brand-50 hover:bg-brand-100 active:scale-95 rounded-xl transition-all flex items-center gap-1.5 border border-brand-100 shadow-2xs">
+                      <i class="fa-regular fa-copy"></i> <span>Chép nội dung</span>
+                    </button>
+                  </div>
+                  <div id="transferMemoDisplay" class="font-mono font-bold text-brand-700 bg-slate-50 p-2.5 rounded-xl text-xs break-all border border-slate-200">
+                    MSSV - Ho Ten - Doan phi
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Bank App Launch Button (Animate UI Shimmer) -->
+            <div class="mt-5 pt-4 border-t border-brand-100">
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-brand-200/80 shadow-sm">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-cyan-500 text-white flex items-center justify-center text-lg shrink-0 shadow-md shadow-brand-500/25">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                  </div>
+                  <div>
+                    <span class="font-extrabold text-slate-900 text-xs sm:text-sm block">Chuyển khoản trực tiếp qua App Ngân Hàng</span>
+                    <span class="text-[11px] text-slate-500 block">Tự mở App trên điện thoại, tự động điền STK & nội dung</span>
+                  </div>
+                </div>
+                <button 
+                  type="button" 
+                  id="btnOpenBankModal"
+                  onclick="openBankSelectorModal()" 
+                  class="shimmer-btn w-full sm:w-auto shrink-0 py-2.5 px-4 bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-600 hover:brightness-105 text-white rounded-xl font-extrabold text-xs shadow-md shadow-brand-500/25 active:scale-95 transition-all flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-building-columns text-cyan-200"></i>
+                  <span id="openBankModalBtnText">Chọn Ứng Dụng</span>
+                  <i class="fa-solid fa-chevron-right text-[10px] opacity-75"></i>
+                </button>
+              </div>
+
+              <!-- Selected Bank Preview Bar -->
+              <div id="selectedBankBar" class="hidden mt-2.5 p-3 bg-brand-50 rounded-2xl border border-brand-200 flex items-center justify-between gap-2.5 text-xs animate-fadeIn">
+                <div class="flex items-center gap-2.5">
+                  <img id="selectedBankBarLogo" src="" alt="Bank Logo" class="w-8 h-8 rounded-xl object-contain bg-white p-0.5 border border-slate-200 shadow-2xs">
+                  <div>
+                    <span class="text-[10px] text-slate-500 block leading-tight">Ứng dụng đã chọn:</span>
+                    <strong class="text-slate-900 font-extrabold text-xs sm:text-sm" id="selectedBankBarName">Techcombank</strong>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button 
+                    type="button" 
+                    onclick="triggerDirectAppLaunch()" 
+                    class="py-1.5 px-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg text-xs transition flex items-center gap-1.5 shadow-sm active:scale-95">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Mở App ngay
+                  </button>
+                  <button 
+                    type="button" 
+                    onclick="openBankSelectorModal()" 
+                    class="py-1.5 px-2.5 text-slate-500 hover:text-slate-800 font-bold text-xs hover:underline">
+                    Đổi
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-slate-100" />
+
+        <!-- SECTION 4: MINH CHỨNG CHUYỂN KHOẢN (ANIMATE-UI DROPZONE) -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-sm sm:text-base font-extrabold text-slate-800 flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xs font-black shadow-xs">4</span>
+              Minh Chứng Chuyển Khoản & Ghi Chú
+            </h2>
+            <span class="text-[11px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+              Tự động nén ảnh
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 mb-3.5">
+            Tải ảnh chụp màn hình thông báo chuyển khoản thành công từ ngân hàng của bạn để đối soát.
+          </p>
+
+          <div class="space-y-4">
+            <!-- Modern DropZone -->
+            <div 
+              id="dropZone" 
+              class="relative border-2 border-dashed border-slate-300 hover:border-brand-500 rounded-3xl p-6 text-center bg-slate-50/70 hover:bg-brand-50/30 cursor-pointer transition-all duration-300 group overflow-hidden"
+              onclick="triggerFileInput()">
+              <input 
+                type="file" 
+                id="proofFileInput" 
+                accept="image/*" 
+                class="hidden" 
+                onchange="handleFileUpload(event)"
+              />
+              
+              <div id="uploadPrompt" class="py-3">
+                <div class="w-14 h-14 rounded-2xl bg-brand-50 group-hover:bg-brand-100 text-brand-600 mx-auto flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  <i class="fa-solid fa-cloud-arrow-up text-2xl"></i>
+                </div>
+                <div class="text-xs sm:text-sm font-extrabold text-slate-800">
+                  Nhấn để tải ảnh hoặc kéo thả vào đây
+                </div>
+                <div class="text-[11px] text-slate-400 mt-1 font-medium">
+                  Hỗ trợ PNG, JPG, JPEG, WEBP (tối đa 10MB, tự động tối ưu hóa)
+                </div>
+              </div>
+
+              <!-- Preview container -->
+              <div id="imagePreviewContainer" class="hidden relative p-2">
+                <img 
+                  id="imagePreview" 
+                  src="" 
+                  alt="Proof Preview" 
+                  title="Nhấn vào ảnh để xem phóng to"
+                  onclick="event.stopPropagation(); if (uploadedImageBase64) openLightbox(uploadedImageBase64, 'Ảnh minh chứng của bạn');"
+                  class="max-h-60 mx-auto rounded-2xl object-contain shadow-lg border border-slate-200 cursor-zoom-in hover:opacity-95 transition"
+                />
+                <button 
+                  type="button" 
+                  onclick="removeUploadedFile(event)"
+                  title="Xoá ảnh này"
+                  class="absolute top-3 right-3 bg-rose-600 hover:bg-rose-700 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg transition-all text-xs font-bold active:scale-95">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="mt-3 text-xs font-bold text-emerald-600 flex items-center justify-center gap-1.5 bg-emerald-50 py-1.5 px-3 rounded-full mx-auto w-fit border border-emerald-200">
+                  <i class="fa-solid fa-circle-check"></i> Ảnh đã sẵn sàng để gửi
+                </div>
+              </div>
+            </div>
+
+            <!-- Notes input -->
+            <div>
+              <label for="extraNotes" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                Lớp sinh hoạt / Ghi chú thêm (Tuỳ chọn)
+              </label>
+              <div class="relative group">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 group-focus-within:text-brand-600 transition-colors pointer-events-none">
+                  <i class="fa-regular fa-comment-dots"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="extraNotes" 
+                  name="extraNotes"
+                  placeholder="Ví dụ: K48 - CNTT 02, SĐT: 0912xxxxxx..."
+                  class="w-full pl-10 pr-3.5 py-3 text-sm bg-slate-50/80 hover:bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT BUTTON: SHIMMER BUTTON -->
+        <div class="pt-2">
+          <button 
+            type="submit" 
+            id="submitBtn"
+            class="shimmer-btn w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-indigo-600 hover:brightness-110 text-white font-black text-sm sm:text-base shadow-xl shadow-brand-500/30 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer">
+            <i class="fa-solid fa-paper-plane text-base"></i>
+            <span>Xác Nhận & Gửi Minh Chứng</span>
+          </button>
+          <p class="text-[11px] text-slate-400 text-center mt-3 flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+            Thông tin và biên nhận chuyển khoản được bảo mật phục vụ công tác đối soát của Đoàn Khoa.
+          </p>
+        </div>
+
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-slate-400 pb-8 space-y-1">
+      <p class="font-medium text-slate-300">© 2026 Đoàn Thanh Niên - Hội Sinh Viên Việt Nam</p>
+      <p class="text-[11px] text-slate-400">Website vibecoding by <strong class="text-slate-300 font-semibold">Thái Hiệp</strong></p>
+    </footer>
+
+  </div> <!-- Kết thúc container .relative.z-10 để các Modal nằm ở root body tránh bị chìm do Stacking Context -->
+
+  <!-- ========================================== -->
+    <!-- MODAL: BẢNG ĐỊNH MỨC THU PHÍ              -->
+    <!-- ========================================== -->
+    <div id="breakdownModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-[100] hidden flex items-center justify-center p-4">
+      <div class="spring-modal bg-white rounded-3xl w-full max-w-lg p-5 sm:p-7 shadow-2xl relative border border-slate-200">
+        <button onclick="toggleBreakdownModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 text-base rounded-xl hover:bg-slate-100 transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h3 class="text-base sm:text-lg font-black text-slate-900 flex items-center gap-2 mb-3">
+          <i class="fa-solid fa-receipt text-brand-600"></i> Quy Định Định Mức Thu Phí
+        </h3>
+
+        <div class="space-y-3.5 text-xs text-slate-600">
+          <div class="p-4 bg-brand-50/70 rounded-2xl border border-brand-100">
+            <span class="font-black text-brand-900 block mb-2 text-xs uppercase tracking-wide">
+              Cơ cấu các khoản thu quy định (Cả năm 12 tháng):
+            </span>
+            <ul class="list-disc pl-4 space-y-1.5 leading-relaxed font-medium">
+              <li><strong>Đoàn phí:</strong> 2.000đ/tháng × 12 tháng = 24.000đ. <br><span class="text-rose-600 font-bold">*Chỉ áp dụng với sinh viên Đã vào Đoàn.</span></li>
+              <li><strong>Hội phí:</strong> 2.000đ/tháng × 12 tháng = 24.000đ.</li>
+              <li><strong>Quỹ CT thanh niên "Ngôi nhà 5.000đ":</strong> 5.000đ/tháng × 12 tháng = 60.000đ.</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-2xl p-4 divide-y divide-slate-100 bg-slate-50/60">
+            <div class="py-2.5 flex justify-between items-center">
+              <div>
+                <div class="font-extrabold text-slate-900 text-sm">Đã vào Đoàn (12 tháng)</div>
+                <div class="text-[11px] text-slate-500">Đoàn phí (24k) + Hội phí (24k) + Quỹ CT (60k)</div>
+              </div>
+              <strong class="text-slate-950 font-black text-base font-mono">108.000đ</strong>
+            </div>
+            <div class="py-2.5 flex justify-between items-center text-brand-900">
+              <div>
+                <div class="font-extrabold text-brand-800 text-sm">Chưa vào Đoàn (12 tháng)</div>
+                <div class="text-[11px] text-slate-500">Miễn Đoàn phí (24k), chỉ đóng Hội phí + Quỹ CT</div>
+              </div>
+              <strong class="text-brand-600 font-black text-base font-mono">84.000đ</strong>
+            </div>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-amber-900 text-xs flex items-center gap-2.5">
+            <i class="fa-regular fa-clock text-amber-600 text-base shrink-0"></i>
+            <div><strong>Hạn hoàn thành:</strong> 30/11/2026. Sinh viên vui lòng hoàn thành trước thời hạn.</div>
+          </div>
+        </div>
+
+        <button 
+          type="button" 
+          onclick="toggleBreakdownModal()" 
+          class="w-full mt-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl text-xs transition">
+          Đóng cửa sổ
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL: BIÊN NHẬN THÀNH CÔNG               -->
+    <!-- ========================================== -->
+    <div id="successModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-md z-[110] hidden flex items-center justify-center p-4">
+      <div class="spring-modal bg-white rounded-3xl w-full max-w-md p-6 sm:p-8 text-center shadow-2xl relative border border-slate-200">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto text-3xl mb-4 shadow-lg shadow-emerald-500/20">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-1.5">Gửi Xác Nhận Thành Công!</h3>
+        <p class="text-xs text-slate-500 mb-4 font-medium">
+          Thông tin chuyển khoản của bạn đã được lưu trữ an toàn vào hệ thống đối soát của Đoàn Khoa.
+        </p>
+
+        <div id="successSummary" class="text-left bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs space-y-2 mb-5 font-mono text-slate-700 shadow-inner">
+          <!-- Dynamically filled -->
+        </div>
+
+        <button 
+          type="button" 
+          onclick="closeSuccessModal()" 
+          class="shimmer-btn w-full py-3.5 bg-gradient-to-r from-brand-600 to-indigo-600 hover:brightness-105 text-white font-extrabold rounded-2xl text-xs sm:text-sm transition shadow-lg shadow-brand-500/25 active:scale-98">
+          Hoàn tất & Nộp cho bạn khác
+        </button>
+      </div>
+    </div>
+
+
+
+    <!-- ========================================== -->
+    <!-- MODAL: CHỌN ỨNG DỤNG NGÂN HÀNG (30 APPS)   -->
+    <!-- ========================================== -->
+    <div id="bankSelectorModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-[120] hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-all duration-300" onclick="closeBankSelectorModal(event)">
+      <div class="spring-modal bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200" onclick="event.stopPropagation()">
+        
+        <!-- Mobile pull indicator -->
+        <div class="w-12 h-1 bg-slate-300 rounded-full mx-auto mt-2.5 mb-1 sm:hidden shrink-0"></div>
+
+        <!-- Header -->
+        <div class="px-5 py-3.5 border-b border-slate-100 flex items-center justify-between shrink-0">
+          <button 
+            type="button" 
+            onclick="closeBankSelectorModal()" 
+            class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 text-lg transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="text-base font-black text-slate-900 text-center flex-1 pr-8">
+            Chọn ứng dụng ngân hàng
+          </h3>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="p-3.5 border-b border-slate-100 bg-white shrink-0">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none text-sm">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input 
+              type="text" 
+              id="bankSearchInput" 
+              placeholder="Tìm kiếm ứng dụng ngân hàng..." 
+              oninput="filterBankApps()"
+              class="w-full pl-10 pr-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium"
+            />
+          </div>
+        </div>
+
+        <!-- Promo Banner -->
+        <div class="px-5 py-2.5 bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500 text-white shrink-0 flex items-center justify-between text-xs shadow-inner">
+          <div class="flex items-center gap-2 font-medium">
+            <i class="fa-solid fa-shield-halved text-yellow-300"></i>
+            <span class="text-[11px] sm:text-xs">Chạm vào App để mở và thanh toán tức thì</span>
+          </div>
+          <span class="text-[10px] font-black bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full uppercase">NAPAS 247</span>
+        </div>
+
+        <!-- Scrollable Banks Container -->
+        <div class="p-4 overflow-y-auto custom-scroll flex-1 space-y-5">
+          <!-- Recommended Section -->
+          <div id="recommendedSection">
+            <h4 class="text-xs font-black text-slate-700 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-fire text-rose-500"></i> Đề xuất
+            </h4>
+            <div id="recommendedBankGrid" class="grid grid-cols-3 sm:grid-cols-4 gap-2.5">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Other Banks Section -->
+          <div id="otherBanksSection">
+            <h4 class="text-xs font-black text-slate-700 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-building-columns text-slate-400"></i> Ứng dụng khác
+            </h4>
+            <div id="otherBankGrid" class="grid grid-cols-3 sm:grid-cols-4 gap-2.5">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Empty search result -->
+          <div id="emptyBankSearchResult" class="hidden py-10 text-center text-slate-400">
+            <i class="fa-solid fa-magnifying-glass text-3xl mb-2 text-slate-300"></i>
+            <p class="text-xs font-semibold">Không tìm thấy ứng dụng phù hợp.</p>
+            <p class="text-[11px] text-slate-400 mt-1">Bạn có thể quét mã VietQR bằng ứng dụng bất kỳ.</p>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="p-3.5 px-5 bg-slate-50 border-t border-slate-100 flex items-center justify-between shrink-0 text-xs">
+          <div class="text-slate-600">
+            <span class="text-[10px] text-slate-400 block font-medium">Số tiền thanh toán:</span>
+            <span id="modalAmountDisplay" class="font-black text-brand-600 text-sm font-mono">108.000 VNĐ</span>
+          </div>
+          <button 
+            type="button" 
+            onclick="copyCurrentMemo()" 
+            class="px-3.5 py-2 bg-white border border-slate-200 hover:border-slate-300 text-slate-800 font-bold rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-2xs">
+            <i class="fa-regular fa-copy text-brand-600"></i> Chép nội dung
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: ĐĂNG NHẬP QUẢN TRỊ VIÊN (ADMIN)     -->
+  <!-- ========================================== -->
+  <div id="adminLoginModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-md z-[130] hidden flex items-center justify-center p-4">
+    <div class="spring-modal bg-white rounded-3xl w-full max-w-md p-6 sm:p-8 shadow-2xl relative border border-slate-200" onclick="event.stopPropagation()">
+      <button 
+        type="button" 
+        onclick="closeLoginModal()" 
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 text-base rounded-xl hover:bg-slate-100 transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 rounded-3xl bg-gradient-to-tr from-brand-700 to-indigo-600 text-white mx-auto flex items-center justify-center text-2xl mb-3 shadow-xl shadow-brand-500/25">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <h3 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+          Đăng Nhập Quản Trị Viên
+        </h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Dành riêng cho Ban Chấp hành Đoàn để tổng hợp báo cáo và đóng/mở form.
+        </p>
+      </div>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)" class="space-y-4">
+        <div>
+          <label for="adminUsername" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Tên Đăng Nhập
+          </label>
+          <div class="relative group">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 group-focus-within:text-brand-600 transition-colors pointer-events-none">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <input 
+              type="text" 
+              id="adminUsername" 
+              required 
+              placeholder="Tên đăng nhập..."
+              class="w-full pl-10 pr-3.5 py-3 text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="adminPassword" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Mật Khẩu
+          </label>
+          <div class="relative group">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 group-focus-within:text-brand-600 transition-colors pointer-events-none">
+              <i class="fa-solid fa-key"></i>
+            </span>
+            <input 
+              type="password" 
+              id="adminPassword" 
+              required 
+              placeholder="Nhập mật khẩu quản trị..."
+              class="w-full pl-10 pr-10 py-3 text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+            />
+            <button 
+              type="button" 
+              onclick="togglePasswordVisibility('adminPassword', this)" 
+              class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-eye text-xs"></i>
+            </button>
+          </div>
+          <div class="flex items-center gap-1.5 mt-2 text-[11px] text-slate-400">
+            <i class="fa-solid fa-shield-halved text-brand-600"></i>
+            <span>Mật khẩu được lưu trữ & mã hóa bảo mật trên cơ sở dữ liệu</span>
+          </div>
+        </div>
+
+        <div id="loginErrorMsg" class="hidden text-xs text-rose-600 bg-rose-50 p-3 rounded-2xl border border-rose-200 font-medium"></div>
+
+        <button 
+          type="submit" 
+          id="btnLoginSubmit"
+          class="shimmer-btn w-full py-3.5 bg-gradient-to-r from-brand-600 to-indigo-600 hover:brightness-105 text-white font-extrabold rounded-2xl text-xs sm:text-sm transition shadow-lg shadow-brand-500/25 active:scale-98 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <span>Đăng Nhập Quản Trị</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: BẢNG ĐIỀU KHIỂN QUẢN TRỊ VIÊN TOÀN QUYỀN (ADMIN PANEL)  -->
+  <!-- ============================================================== -->
+  <div id="adminDashboardModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-[140] hidden flex items-center justify-center p-2 sm:p-4">
+    <div class="spring-modal bg-white rounded-3xl w-full max-w-5xl max-h-[94vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
+      
+      <!-- Admin Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 text-white shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-500 text-slate-950 flex items-center justify-center text-lg font-black shadow-lg">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base sm:text-lg font-black tracking-tight">Trung Tâm Quản Trị & Báo Cáo Đoàn Phí</h3>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-extrabold px-2.5 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+                <i class="fa-solid fa-circle text-[6px]"></i> Toàn quyền
+              </span>
+            </div>
+            <p class="text-xs text-slate-300">Đóng/mở tiếp nhận form, tổng hợp báo cáo và đối soát ảnh minh chứng</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button 
+            type="button" 
+            onclick="refreshAdminData()" 
+            title="Làm mới dữ liệu" 
+            class="p-2 px-3 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 active:scale-95">
+            <i class="fa-solid fa-rotate text-xs"></i>
+            <span class="hidden sm:inline">Làm mới</span>
+          </button>
+          <button 
+            type="button" 
+            onclick="openChangePasswordModal()" 
+            title="Đổi mật khẩu quản trị viên" 
+            class="p-2 px-3 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-amber-500/30 active:scale-95">
+            <i class="fa-solid fa-key text-xs"></i>
+            <span class="hidden sm:inline">Đổi MK</span>
+          </button>
+          <button 
+            type="button" 
+            onclick="logoutAdmin()" 
+            title="Đăng xuất" 
+            class="p-2 px-3 bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-rose-500/30 active:scale-95">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="hidden sm:inline">Đăng xuất</span>
+          </button>
+          <button 
+            type="button" 
+            onclick="closeAdminDashboard()" 
+            class="text-slate-400 hover:text-white p-2 rounded-xl text-lg hover:bg-white/10 transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Admin Content Area -->
+      <div class="overflow-y-auto custom-scroll p-4 sm:p-6 space-y-6 flex-1 bg-slate-50/60">
+
+        <!-- CARD 1: FORM STATUS CONTROL (ANIMATE-UI SLIDER) -->
+        <div class="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3.5 border-b border-slate-100 gap-3">
+            <div>
+              <span class="text-xs font-black text-slate-400 uppercase tracking-wider block">Cài đặt hệ thống</span>
+              <h4 class="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2 mt-0.5">
+                <i class="fa-solid fa-sliders text-brand-600"></i>
+                Trạng Thái Tiếp Nhận Biểu Mẫu (Form Control)
+              </h4>
+            </div>
+            
+            <!-- Live Status Badge -->
+            <div id="adminFormStatusBadge" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full font-bold text-xs bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="adminFormStatusText">Đang Mở Tiếp Nhận</span>
+            </div>
+          </div>
+
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <!-- Toggle buttons -->
+            <div class="flex items-center gap-1.5 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+              <button 
+                type="button" 
+                id="btnFormStateOpen" 
+                onclick="setFormStateInput(true)" 
+                class="flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 bg-white text-emerald-700 shadow-sm">
+                <i class="fa-solid fa-lock-open text-emerald-500"></i> Mở Form
+              </button>
+              <button 
+                type="button" 
+                id="btnFormStateClose" 
+                onclick="setFormStateInput(false)" 
+                class="flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900">
+                <i class="fa-solid fa-lock text-rose-500"></i> Đóng Form
+              </button>
+            </div>
+
+            <!-- Reason input -->
+            <div class="md:col-span-2 flex flex-col sm:flex-row items-stretch gap-2">
+              <input 
+                type="text" 
+                id="adminCloseReasonInput" 
+                placeholder="Lý do đóng form (VD: Hết hạn nộp đợt 1, tạm dừng đối soát...)" 
+                class="flex-1 px-4 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition font-medium"
+              />
+              <button 
+                type="button" 
+                id="btnSaveFormStatus" 
+                onclick="saveFormStatusChange()" 
+                class="shimmer-btn px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-extrabold rounded-2xl text-xs transition flex items-center justify-center gap-1.5 shrink-0 shadow-md shadow-brand-500/20 active:scale-95">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Áp dụng ngay</span>
+              </button>
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-2.5 font-medium">
+            * Khi đóng form: Toàn bộ sinh viên vào trang sẽ bị khóa form nộp và nhận thông báo lý do đóng cổng thu phí.
+          </p>
+        </div>
+
+        <!-- CARD 2: BÁO CÁO TỔNG HỢP (ANIMATE-UI KPI CARDS) -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-xs font-black text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+              <i class="fa-solid fa-chart-pie text-brand-600"></i> Tổng Hợp Thống Kê Đoàn Phí
+            </h4>
+            <span class="text-[11px] text-slate-400 font-mono" id="statLastUpdated">Cập nhật: Mới tức thì</span>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
+            <!-- Total Submissions -->
+            <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between text-slate-400 mb-2">
+                <span class="text-xs font-bold">Tổng lượt nộp</span>
+                <div class="w-8 h-8 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-sm shadow-2xs">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+              </div>
+              <div class="text-xl sm:text-2xl font-black text-slate-900 font-mono" id="adminStatTotal">0</div>
+              <span class="text-[10px] text-slate-400 font-medium">Hồ sơ đã tiếp nhận</span>
+            </div>
+
+            <!-- Total Money -->
+            <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between text-slate-400 mb-2">
+                <span class="text-xs font-bold">Tổng tiền thu</span>
+                <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm shadow-2xs">
+                  <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+              </div>
+              <div class="text-lg sm:text-xl font-black text-emerald-700 truncate font-mono" id="adminStatMoney">0 đ</div>
+              <span class="text-[10px] text-emerald-600 font-medium">Đối soát tài khoản TCB</span>
+            </div>
+
+            <!-- Đã vào Đoàn -->
+            <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between text-slate-400 mb-2">
+                <span class="text-xs font-bold">Đã vào Đoàn</span>
+                <div class="w-8 h-8 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm shadow-2xs">
+                  <i class="fa-solid fa-shield-heart"></i>
+                </div>
+              </div>
+              <div class="text-xl sm:text-2xl font-black text-rose-600 font-mono" id="adminStatDoanVien">0</div>
+              <span class="text-[10px] text-slate-400 font-medium">Định mức 108.000đ</span>
+            </div>
+
+            <!-- Chưa vào Đoàn -->
+            <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between text-slate-400 mb-2">
+                <span class="text-xs font-bold">Chưa vào Đoàn</span>
+                <div class="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm shadow-2xs">
+                  <i class="fa-solid fa-user-clock"></i>
+                </div>
+              </div>
+              <div class="text-xl sm:text-2xl font-black text-amber-600 font-mono" id="adminStatChuaDoan">0</div>
+              <span class="text-[10px] text-slate-400 font-medium">Định mức 84.000đ</span>
+            </div>
+
+            <!-- Minh chứng -->
+            <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-xs col-span-2 lg:col-span-1 hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between text-slate-400 mb-2">
+                <span class="text-xs font-bold">Có minh chứng</span>
+                <div class="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm shadow-2xs">
+                  <i class="fa-solid fa-images"></i>
+                </div>
+              </div>
+              <div class="text-xl sm:text-2xl font-black text-purple-700 font-mono" id="adminStatHasProof">0</div>
+              <span class="text-[10px] text-slate-400 font-medium">Sẵn sàng đối soát</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: DANH SÁCH & BỘ LỌC ĐỐI SOÁT -->
+        <div class="bg-white rounded-3xl border border-slate-200/80 shadow-xs overflow-hidden">
+          
+          <!-- Filter & Action toolbar -->
+          <div class="p-4 border-b border-slate-200 flex flex-wrap gap-2.5 items-center justify-between bg-slate-50/70">
+            <div class="flex flex-wrap items-center gap-2.5 flex-1 min-w-[280px]">
+              <!-- Search -->
+              <div class="relative w-full sm:w-64">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                  <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="adminSearchInput" 
+                  placeholder="Tìm theo Tên hoặc MSSV..." 
+                  oninput="filterAdminSubmissions()"
+                  class="pl-9 pr-3.5 py-2 border border-slate-200 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-600 text-xs bg-white font-medium"
+                />
+              </div>
+
+              <!-- Filter Membership -->
+              <select 
+                id="adminMembershipFilter" 
+                onchange="filterAdminSubmissions()" 
+                class="px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 font-medium">
+                <option value="all">Tất cả tư cách đoàn</option>
+                <option value="Đã vào Đoàn">Đã vào Đoàn (108k)</option>
+                <option value="Chưa vào Đoàn">Chưa vào Đoàn (84k)</option>
+              </select>
+
+              <!-- Filter Proof -->
+              <select 
+                id="adminProofFilter" 
+                onchange="filterAdminSubmissions()" 
+                class="px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 font-medium">
+                <option value="all">Tất cả minh chứng</option>
+                <option value="yes">Có ảnh minh chứng</option>
+                <option value="no">Chưa có ảnh</option>
+              </select>
+            </div>
+
+            <!-- Export / Clear buttons -->
+            <div class="flex items-center gap-2 shrink-0">
+              <button 
+                type="button" 
+                onclick="exportAdminCSV()" 
+                class="shimmer-btn px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold transition flex items-center gap-1.5 shadow-sm text-xs active:scale-95">
+                <i class="fa-solid fa-file-csv"></i>
+                <span>Xuất Excel CSV</span>
+              </button>
+              <button 
+                type="button" 
+                onclick="adminClearAll()" 
+                class="px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl font-bold transition flex items-center gap-1.5 text-xs border border-rose-200 active:scale-95">
+                <i class="fa-solid fa-trash-can"></i>
+                <span>Xoá tất cả</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200 bg-slate-100/70 text-slate-700 font-bold">
+                  <th class="py-3.5 px-4">Thời gian</th>
+                  <th class="py-3.5 px-4">Họ và Tên</th>
+                  <th class="py-3.5 px-4">MSSV</th>
+                  <th class="py-3.5 px-4">Tư cách đoàn</th>
+                  <th class="py-3.5 px-4">Số tiền</th>
+                  <th class="py-3.5 px-4">Nội dung CK</th>
+                  <th class="py-3.5 px-4">Lớp / Ghi chú</th>
+                  <th class="py-3.5 px-4 text-center">Minh chứng</th>
+                  <th class="py-3.5 px-4 text-center">Hành động</th>
+                </tr>
+              </thead>
+              <tbody id="adminTableBody" class="divide-y divide-slate-100 text-slate-700 bg-white">
+                <!-- Dynamically rendered -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty Msg -->
+          <div id="adminEmptyMsg" class="py-14 text-center text-slate-400 hidden">
+            <i class="fa-solid fa-inbox text-4xl mb-3 text-slate-300"></i>
+            <p class="font-bold text-slate-700">Không tìm thấy bản ghi nào phù hợp.</p>
+            <p class="text-[11px] text-slate-400 mt-1">Dữ liệu sẽ xuất hiện khi sinh viên thực hiện gửi phiếu nộp đoàn phí.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Admin Modal Footer -->
+      <div class="p-4 px-6 bg-slate-100 border-t border-slate-200 flex items-center justify-between shrink-0 text-xs text-slate-500">
+        <div>
+          <span>Đang đăng nhập: </span>
+          <strong class="text-slate-900 font-black" id="adminUserSessionName">admin (Quản trị viên)</strong>
+        </div>
+        <button 
+          type="button" 
+          onclick="closeAdminDashboard()" 
+          class="px-4 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold rounded-xl transition text-xs shadow-xs">
+          Đóng bảng quản trị
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: ĐỔI MẬT KHẨU QUẢN TRỊ VIÊN                             -->
+  <!-- ============================================================== -->
+  <div id="changePasswordModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-[150] hidden flex items-center justify-center p-4">
+    <div class="spring-modal bg-white rounded-3xl w-full max-w-md p-6 sm:p-7 shadow-2xl relative border border-slate-200" onclick="event.stopPropagation()">
+      <button 
+        type="button" 
+        onclick="closeChangePasswordModal()" 
+        class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2 text-base rounded-xl hover:bg-slate-100 transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-5">
+        <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 border border-amber-200 mx-auto flex items-center justify-center text-xl mb-3 shadow-md">
+          <i class="fa-solid fa-key"></i>
+        </div>
+        <h3 class="text-lg font-black text-slate-900 tracking-tight">
+          Đổi Mật Khẩu Quản Trị Viên
+        </h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Mật khẩu mới sẽ được mã hoá bảo mật và lưu trực tiếp vào cơ sở dữ liệu.
+        </p>
+      </div>
+
+      <form onsubmit="handleChangePassword(event)" class="space-y-4">
+        <div>
+          <label for="currentPasswordInput" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Mật khẩu hiện tại
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+              <i class="fa-solid fa-lock text-xs"></i>
+            </span>
+            <input 
+              type="password" 
+              id="currentPasswordInput" 
+              required 
+              placeholder="Nhập mật khẩu hiện tại..."
+              class="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+            />
+            <button 
+              type="button" 
+              onclick="togglePasswordVisibility('currentPasswordInput', this)" 
+              class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-eye text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="newPasswordInput" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Mật khẩu mới
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+              <i class="fa-solid fa-shield-halved text-xs"></i>
+            </span>
+            <input 
+              type="password" 
+              id="newPasswordInput" 
+              required 
+              minlength="6"
+              placeholder="Tối thiểu 6 ký tự..."
+              class="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+            />
+            <button 
+              type="button" 
+              onclick="togglePasswordVisibility('newPasswordInput', this)" 
+              class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-eye text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="confirmNewPasswordInput" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Xác nhận mật khẩu mới
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 pointer-events-none">
+              <i class="fa-solid fa-check-double text-xs"></i>
+            </span>
+            <input 
+              type="password" 
+              id="confirmNewPasswordInput" 
+              required 
+              minlength="6"
+              placeholder="Nhập lại mật khẩu mới..."
+              class="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/15 focus:border-brand-600 transition-all font-medium text-slate-800"
+            />
+            <button 
+              type="button" 
+              onclick="togglePasswordVisibility('confirmNewPasswordInput', this)" 
+              class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-slate-400 hover:text-slate-600">
+              <i class="fa-solid fa-eye text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="changePasswordErrorMsg" class="hidden text-xs text-rose-600 bg-rose-50 p-3 rounded-2xl border border-rose-200 font-medium"></div>
+
+        <div class="pt-2 flex items-center gap-2.5">
+          <button 
+            type="button" 
+            onclick="closeChangePasswordModal()" 
+            class="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl text-xs transition">
+            Hủy bỏ
+          </button>
+          <button 
+            type="submit" 
+            id="btnChangePasswordSubmit"
+            class="shimmer-btn flex-1 py-3 bg-gradient-to-r from-amber-600 to-brand-600 hover:brightness-105 text-white font-extrabold rounded-2xl text-xs transition shadow-lg shadow-amber-500/25 active:scale-98 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>Lưu Mật Khẩu</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: LIGHTBOX XEM ẢNH MINH CHỨNG / BILL (Z-INDEX CAO NHẤT)   -->
+  <!-- ============================================================== -->
+  <div id="lightboxModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-[200] hidden flex items-center justify-center p-3 sm:p-6" onclick="closeLightbox(event)">
+    <div class="spring-modal relative max-w-3xl w-full max-h-[92vh] bg-slate-900 rounded-3xl p-4 sm:p-5 shadow-2xl overflow-hidden flex flex-col border border-slate-700/80" onclick="event.stopPropagation()">
+      
+      <!-- Lightbox Header -->
+      <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-white shrink-0">
+        <div class="flex items-center gap-2.5 overflow-hidden">
+          <div class="w-8 h-8 rounded-xl bg-brand-500/20 text-brand-400 border border-brand-500/30 flex items-center justify-center text-sm shrink-0">
+            <i class="fa-solid fa-receipt"></i>
+          </div>
+          <div class="truncate">
+            <h4 class="text-xs sm:text-sm font-black text-slate-100 truncate">Minh Chứng Chuyển Khoản</h4>
+            <span id="lightboxInfo" class="text-[11px] text-slate-400 font-mono truncate block"></span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <button 
+            type="button" 
+            onclick="rotateLightbox()" 
+            title="Xoay ảnh 90°" 
+            class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-slate-700">
+            <i class="fa-solid fa-rotate-right"></i> <span class="hidden sm:inline">Xoay ảnh</span>
+          </button>
+          
+          <a 
+            id="lightboxDownloadBtn" 
+            href="#" 
+            download="minh-chung-doan-phi.jpg" 
+            title="Tải ảnh gốc về máy" 
+            class="px-2.5 py-1.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-md shadow-brand-500/20">
+            <i class="fa-solid fa-download"></i> <span class="hidden sm:inline">Tải về</span>
+          </a>
+
+          <button 
+            type="button" 
+            onclick="closeLightbox()" 
+            data-close-lightbox="true"
+            title="Đóng cửa sổ (Esc)" 
+            class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-400 hover:text-white flex items-center justify-center text-sm transition border border-slate-700 hover:border-rose-500">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Display Area -->
+      <div class="flex-1 min-h-0 flex items-center justify-center overflow-auto bg-slate-950/60 rounded-2xl p-2 border border-slate-800/80 relative">
+        <img 
+          id="lightboxImg" 
+          src="" 
+          alt="Minh chứng chi tiết" 
+          class="max-h-[70vh] max-w-full rounded-xl object-contain shadow-2xl transition-transform duration-300 ease-out select-none"
+        />
+      </div>
+
+      <!-- Footer Info -->
+      <div class="pt-3 flex items-center justify-between text-[11px] text-slate-400 shrink-0">
+        <span><i class="fa-regular fa-keyboard mr-1"></i> Bấm <kbd class="px-1.5 py-0.5 bg-slate-800 text-slate-300 rounded border border-slate-700 text-[10px]">Esc</kbd> hoặc nhấp ra ngoài để đóng</span>
+        <button 
+          type="button" 
+          onclick="closeLightbox()" 
+          data-close-lightbox="true"
+          class="text-slate-400 hover:text-white font-bold hover:underline">
+          Đóng cửa sổ
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC & ANIMATIONS              -->
+  <!-- ========================================== -->
+  <script>
+    // Configuration constants
+    const BANK_ID = "TCB"; // Techcombank
+    const ACCOUNT_NO = "23062007520";
+    const ACCOUNT_NAME = "THAI HONG HIEP";
+
+    // Pricing matrix
+    const PRICING = {
+      da_vao_doan: {
+        12: 108000,
+        label: "Đã vào Đoàn"
+      },
+      chua_vao_doan: {
+        12: 84000,
+        label: "Chưa vào Đoàn"
+      }
+    };
+
+    // State
+    let uploadedImageBase64 = null;
+    let qrDebounceTimeout = null;
+    let isFormGloballyOpen = true;
+    let adminCachedSubmissions = [];
+    let currentSelectedMembership = 'da_vao_doan';
+
+    // Auth Storage Keys
+    const TOKEN_KEY = 'admin_jwt_token';
+    const USER_KEY = 'admin_user_info';
+    const API_BASE = '/api';
+
+    // Modern Toast Notification with Spring Easing
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const isSuccess = type === 'success';
+      toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3.5 rounded-2xl text-xs font-bold shadow-2xl text-white transition-all transform duration-300 translate-y-3 opacity-0 ${
+        isSuccess ? 'bg-slate-900/95 border border-emerald-500/40 backdrop-blur-xl' : 'bg-rose-600/95 border border-rose-400/40 backdrop-blur-xl'
+      }`;
+      
+      toast.innerHTML = `
+        <i class="${isSuccess ? 'fa-solid fa-circle-check text-emerald-400 text-base' : 'fa-solid fa-circle-exclamation text-rose-200 text-base'} shrink-0"></i>
+        <span class="flex-1 leading-snug">${message}</span>
+      `;
+      
+      container.appendChild(toast);
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-3', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-3');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Modern Copy helper with visual feedback
+    async function copyToClipboard(text, successMessage, buttonId) {
+      if (navigator.clipboard && window.isSecureContext) {
+        try {
+          await navigator.clipboard.writeText(text);
+          triggerCopyFeedback(buttonId, successMessage);
+          return;
+        } catch (err) {}
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          triggerCopyFeedback(buttonId, successMessage);
+        } else {
+          showToast('Không thể sao chép tự động, vui lòng chọn thủ công.', 'error');
+        }
+      } catch (err) {
+        showToast('Trình duyệt không hỗ trợ sao chép tự động.', 'error');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function triggerCopyFeedback(buttonId, successMessage) {
+      showToast(successMessage || 'Đã sao chép vào bộ nhớ tạm!');
+      if (!buttonId) return;
+      const btn = document.getElementById(buttonId);
+      if (!btn) return;
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = `<i class="fa-solid fa-check text-emerald-600"></i> <span class="text-emerald-700">Đã chép!</span>`;
+      btn.classList.add('bg-emerald-50', 'border-emerald-200');
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.remove('bg-emerald-50', 'border-emerald-200');
+      }, 2000);
+    }
+
+    function removeVietnameseTones(str) {
+      if (!str) return '';
+      str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+      str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+      str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+      str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+      str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+      str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+      str = str.replace(/đ/g, "d");
+      str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+      str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+      str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+      str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+      str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+      str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+      str = str.replace(/Đ/g, "D");
+      str = str.replace(/[^a-zA-Z0-9\s-]/g, "");
+      return str.trim();
+    }
+
+    function selectMembershipOption(option) {
+      currentSelectedMembership = option;
+      const isDoanVien = option === 'da_vao_doan';
+
+      const labelTrue = document.getElementById('labelDoanVienTrue');
+      const labelFalse = document.getElementById('labelDoanVienFalse');
+      const iconTrue = document.getElementById('checkIconTrue');
+      const iconFalse = document.getElementById('checkIconFalse');
+
+      document.getElementById('doanVienTrue').checked = isDoanVien;
+      document.getElementById('doanVienFalse').checked = !isDoanVien;
+
+      if (isDoanVien) {
+        labelTrue.className = 'group relative cursor-pointer p-4 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between border-brand-600 bg-brand-50/60 shadow-md shadow-brand-500/10';
+        iconTrue.className = 'text-brand-600 text-xl transition-all scale-100 opacity-100';
+
+        labelFalse.className = 'group relative cursor-pointer p-4 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between border-slate-200 hover:border-slate-300 bg-white';
+        iconFalse.className = 'text-brand-600 text-xl transition-all scale-75 opacity-0';
+      } else {
+        labelFalse.className = 'group relative cursor-pointer p-4 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between border-brand-600 bg-brand-50/60 shadow-md shadow-brand-500/10';
+        iconFalse.className = 'text-brand-600 text-xl transition-all scale-100 opacity-100';
+
+        labelTrue.className = 'group relative cursor-pointer p-4 rounded-2xl border-2 transition-all duration-300 flex items-center justify-between border-slate-200 hover:border-slate-300 bg-white';
+        iconTrue.className = 'text-brand-600 text-xl transition-all scale-75 opacity-0';
+      }
+
+      updateFeeAndQR();
+    }
+
+    function calculateCurrentValues() {
+      const membership = currentSelectedMembership;
+      const duration = 12;
+      const amount = PRICING[membership][duration];
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const studentId = document.getElementById('studentId').value.trim();
+
+      let memoClean = '';
+      if (studentId || fullName) {
+        const cleanName = removeVietnameseTones(fullName);
+        const cleanMSSV = removeVietnameseTones(studentId).toUpperCase();
+        memoClean = `${cleanMSSV || 'MSSV'} ${cleanName || 'HOTEN'} Doan phi`.trim();
+      } else {
+        memoClean = 'MSSV - Ho Ten - Doan phi';
+      }
+
+      return {
+        membership,
+        duration,
+        amount,
+        memo: memoClean,
+        fullName,
+        studentId
+      };
+    }
+
+    // Number ticker animation for price
+    let previousAmount = 108000;
+    function animateValue(element, start, end, duration) {
+      if (start === end) {
+        element.textContent = end.toLocaleString('vi-VN');
+        return;
+      }
+      const range = end - start;
+      let current = start;
+      const increment = end > start ? 1000 : -1000;
+      const stepTime = Math.abs(Math.floor(duration / (range / 1000))) || 15;
+      const timer = setInterval(() => {
+        current += increment;
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+          current = end;
+          clearInterval(timer);
+        }
+        element.textContent = current.toLocaleString('vi-VN');
+      }, stepTime);
+    }
+
+    function updateFeeAndQR() {
+      const data = calculateCurrentValues();
+      
+      const amountDisplay = document.getElementById('totalAmountDisplay');
+      animateValue(amountDisplay, previousAmount, data.amount, 250);
+      previousAmount = data.amount;
+
+      const formattedAmount = data.amount.toLocaleString('vi-VN');
+      const modalAmountDisplay = document.getElementById('modalAmountDisplay');
+      if (modalAmountDisplay) {
+        modalAmountDisplay.textContent = `${formattedAmount} VNĐ`;
+      }
+
+      const statusLabel = PRICING[data.membership].label;
+      document.getElementById('statusFeeDesc').textContent = `${statusLabel} (${data.duration} tháng)`;
+      document.getElementById('transferMemoDisplay').textContent = data.memo;
+
+      generateVietQR(data.amount, data.memo);
+    }
+
+    function updateQRData() {
+      clearTimeout(qrDebounceTimeout);
+      qrDebounceTimeout = setTimeout(() => {
+        updateFeeAndQR();
+      }, 300);
+    }
+
+    function generateVietQR(amount, memo) {
+      const qrLoading = document.getElementById('qrLoading');
+      const qrImage = document.getElementById('vietQrImage');
+      if (!qrImage) return;
+      
+      if (qrLoading) qrLoading.classList.remove('hidden');
+
+      const encodedMemo = encodeURIComponent(memo);
+      const encodedName = encodeURIComponent(ACCOUNT_NAME);
+      const qrUrl = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-compact2.png?amount=${amount}&addInfo=${encodedMemo}&accountName=${encodedName}`;
+
+      qrImage.onload = function() {
+        if (qrLoading) qrLoading.classList.add('hidden');
+      };
+
+      qrImage.onerror = function() {
+        if (qrLoading) qrLoading.classList.add('hidden');
+        console.warn('Không tải được ảnh VietQR tự động. Sinh viên vẫn chuyển khoản bình thường theo STK.');
+      };
+
+      qrImage.src = qrUrl;
+    }
+
+    function hideQRLoader() {
+      const qrLoading = document.getElementById('qrLoading');
+      if (qrLoading) qrLoading.classList.add('hidden');
+    }
+
+    function handleQRError() {
+      const qrLoading = document.getElementById('qrLoading');
+      if (qrLoading) qrLoading.classList.add('hidden');
+    }
+
+    function copyCurrentMemo() {
+      const data = calculateCurrentValues();
+      copyToClipboard(data.memo, 'Đã sao chép nội dung chuyển khoản!', 'btnCopyMemo');
+    }
+
+    function triggerFileInput() {
+      if (!isFormGloballyOpen) {
+        showToast('Cổng thu đoàn phí đang đóng, không thể tải ảnh!', 'error');
+        return;
+      }
+      document.getElementById('proofFileInput').click();
+    }
+
+    // Image compression
+    function compressImage(file, maxWidth, maxHeight, quality, callback) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          let width = img.width;
+          let height = img.height;
+
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          }
+          if (height > maxHeight) {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          const dataUrl = canvas.toDataURL('image/jpeg', quality);
+          callback(dataUrl);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        showToast('Vui lòng chọn file hình ảnh (PNG, JPG, JPEG, WEBP).', 'error');
+        return;
+      }
+
+      if (file.size > 10 * 1024 * 1024) {
+        showToast('Dung lượng ảnh tối đa là 10MB.', 'error');
+        return;
+      }
+
+      compressImage(file, 1200, 1200, 0.8, function(compressedBase64) {
+        uploadedImageBase64 = compressedBase64;
+        document.getElementById('imagePreview').src = uploadedImageBase64;
+        document.getElementById('uploadPrompt').classList.add('hidden');
+        document.getElementById('imagePreviewContainer').classList.remove('hidden');
+        showToast('Đã tải và tối ưu ảnh minh chứng thành công!');
+      });
+    }
+
+    function removeUploadedFile(event) {
+      if (event && event.stopPropagation) {
+        event.stopPropagation();
+      }
+      uploadedImageBase64 = null;
+      document.getElementById('proofFileInput').value = '';
+      document.getElementById('imagePreview').src = '';
+      document.getElementById('imagePreviewContainer').classList.add('hidden');
+      document.getElementById('uploadPrompt').classList.remove('hidden');
+    }
+
+    // Modal toggles
+    function toggleBreakdownModal() {
+      document.getElementById('breakdownModal').classList.toggle('hidden');
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('successModal').classList.add('hidden');
+    }
+
+    let currentLightboxRotation = 0;
+
+    function openLightbox(imageUrl, infoText) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const info = document.getElementById('lightboxInfo');
+      const download = document.getElementById('lightboxDownloadBtn');
+      
+      if (!modal || !img) return;
+
+      currentLightboxRotation = 0;
+      img.style.transform = 'rotate(0deg)';
+      img.src = imageUrl;
+      if (info) info.textContent = infoText || 'Ảnh minh chứng';
+      if (download) download.href = imageUrl;
+      
+      modal.classList.remove('hidden');
+    }
+
+    function closeLightbox(event) {
+      if (event) {
+        const isBackdrop = event.target.id === 'lightboxModal';
+        const isCloseBtn = event.target.closest('[data-close-lightbox]') || event.target.closest('button');
+        if (!isBackdrop && !isCloseBtn) {
+          return;
+        }
+      }
+      const modal = document.getElementById('lightboxModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function rotateLightbox() {
+      currentLightboxRotation = (currentLightboxRotation + 90) % 360;
+      const img = document.getElementById('lightboxImg');
+      if (img) {
+        img.style.transform = `rotate(${currentLightboxRotation}deg)`;
+      }
+    }
+
+    // Keyboard shortcut Esc for closing modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const cpModal = document.getElementById('changePasswordModal');
+        if (cpModal && !cpModal.classList.contains('hidden')) {
+          cpModal.classList.add('hidden');
+          return;
+        }
+        const lb = document.getElementById('lightboxModal');
+        if (lb && !lb.classList.contains('hidden')) {
+          lb.classList.add('hidden');
+          return;
+        }
+        const bankModal = document.getElementById('bankSelectorModal');
+        if (bankModal && !bankModal.classList.contains('hidden')) {
+          bankModal.classList.add('hidden');
+          return;
+        }
+        const breakdown = document.getElementById('breakdownModal');
+        if (breakdown && !breakdown.classList.contains('hidden')) {
+          breakdown.classList.add('hidden');
+          return;
+        }
+      }
+    });
+
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fa-solid fa-eye-slash text-xs';
+      } else {
+        input.type = 'password';
+        icon.className = 'fa-solid fa-eye text-xs';
+      }
+    }
+
+    // ==========================================
+    // SYSTEM STATUS & FORM TOGGLE (API)
+    // ==========================================
+    async function checkSystemStatus() {
+      try {
+        const res = await fetch(`${API_BASE}/system/status`);
+        if (res.ok) {
+          const data = await res.json();
+          applySystemStatus(data.isFormOpen, data.closeReason);
+          return data;
+        }
+      } catch (err) {
+        console.warn('Cannot reach system status API:', err);
+      }
+      return null;
+    }
+
+    function applySystemStatus(isOpen, reason) {
+      isFormGloballyOpen = isOpen;
+      const banner = document.getElementById('formClosedBanner');
+      const reasonText = document.getElementById('formClosedReasonText');
+      const submitBtn = document.getElementById('submitBtn');
+      const dropZone = document.getElementById('dropZone');
+
+      if (!isOpen) {
+        banner.classList.remove('hidden');
+        reasonText.textContent = reason || 'Hệ thống đã kết thúc đợt thu hoặc đang tạm ngừng để quản trị viên kiểm tra số liệu.';
+        
+        submitBtn.disabled = true;
+        submitBtn.className = 'w-full py-4 px-6 rounded-2xl bg-slate-400 text-white font-black text-sm sm:text-base cursor-not-allowed opacity-75 shadow-none transition-all flex items-center justify-center gap-2.5';
+        submitBtn.innerHTML = `<i class="fa-solid fa-lock text-base"></i> Cổng Tiếp Nhận Hiện Đang Tạm Đóng`;
+
+        dropZone.classList.add('opacity-60', 'cursor-not-allowed');
+      } else {
+        banner.classList.add('hidden');
+        
+        submitBtn.disabled = false;
+        submitBtn.className = 'shimmer-btn w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-indigo-600 hover:brightness-110 text-white font-black text-sm sm:text-base shadow-xl shadow-brand-500/30 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer';
+        submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane text-base"></i> <span>Xác Nhận & Gửi Minh Chứng</span>`;
+
+        dropZone.classList.remove('opacity-60', 'cursor-not-allowed');
+      }
+
+      updateAdminFormStatusDisplay(isOpen, reason);
+    }
+
+    function updateAdminFormStatusDisplay(isOpen, reason) {
+      const badge = document.getElementById('adminFormStatusBadge');
+      const badgeText = document.getElementById('adminFormStatusText');
+      const btnOpen = document.getElementById('btnFormStateOpen');
+      const btnClose = document.getElementById('btnFormStateClose');
+      const reasonInput = document.getElementById('adminCloseReasonInput');
+
+      if (!badge || !badgeText) return;
+
+      if (isOpen) {
+        badge.className = 'flex items-center gap-2 px-3.5 py-1.5 rounded-full font-bold text-xs bg-emerald-50 text-emerald-700 border border-emerald-200';
+        badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span>Đang Mở Tiếp Nhận</span>`;
+        
+        btnOpen.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 bg-white text-emerald-700 shadow-sm';
+        btnClose.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900';
+      } else {
+        badge.className = 'flex items-center gap-2 px-3.5 py-1.5 rounded-full font-bold text-xs bg-rose-50 text-rose-700 border border-rose-200';
+        badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span><span>Đang Đóng Tiếp Nhận</span>`;
+        
+        btnClose.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 bg-white text-rose-700 shadow-sm';
+        btnOpen.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900';
+      }
+
+      if (reason && reasonInput && !reasonInput.value) {
+        reasonInput.value = reason;
+      }
+    }
+
+    let selectedFormToggleState = true;
+    function setFormStateInput(isOpen) {
+      selectedFormToggleState = isOpen;
+      const btnOpen = document.getElementById('btnFormStateOpen');
+      const btnClose = document.getElementById('btnFormStateClose');
+
+      if (isOpen) {
+        btnOpen.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 bg-white text-emerald-700 shadow-sm';
+        btnClose.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900';
+      } else {
+        btnClose.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 bg-white text-rose-700 shadow-sm';
+        btnOpen.className = 'flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center gap-1.5 text-slate-600 hover:text-slate-900';
+      }
+    }
+
+    async function saveFormStatusChange() {
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      if (!token) {
+        showToast('Vui lòng đăng nhập lại quyền quản trị viên.', 'error');
+        openLoginModal();
+        return;
+      }
+
+      const reason = document.getElementById('adminCloseReasonInput').value.trim();
+      const btn = document.getElementById('btnSaveFormStatus');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Đang lưu...`;
+
+      try {
+        const res = await fetch(`${API_BASE}/system/toggle-form`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            isFormOpen: selectedFormToggleState,
+            reason: selectedFormToggleState ? null : reason
+          })
+        });
+
+        if (res.status === 401 || res.status === 403) {
+          handleAuthExpired();
+          return;
+        }
+
+        if (res.ok) {
+          const data = await res.json();
+          applySystemStatus(data.isFormOpen, data.closeReason);
+          showToast(`Đã ${data.isFormOpen ? 'MỞ' : 'ĐÓNG'} cổng tiếp nhận biểu mẫu thành công!`);
+        } else {
+          showToast('Không thể cập nhật trạng thái form.', 'error');
+        }
+      } catch (err) {
+        showToast('Lỗi kết nối khi cập nhật trạng thái form.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    // ==========================================
+    // ROLE 1: SINH VIÊN (PUBLIC - NỘP FORM)
+    // ==========================================
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
+      if (!isFormGloballyOpen) {
+        showToast('Cổng thu đoàn phí hiện đang tạm dừng tiếp nhận. Không thể nộp!', 'error');
+        return;
+      }
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const studentId = document.getElementById('studentId').value.trim();
+      const notes = document.getElementById('extraNotes').value.trim();
+      const data = calculateCurrentValues();
+
+      if (!fullName || !studentId) {
+        showToast('Vui lòng nhập đầy đủ Họ Tên và Mã Sinh Viên!', 'error');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-base"></i> Đang ghi nhận thông tin...`;
+
+      const payload = {
+        fullName,
+        studentId: studentId.toUpperCase(),
+        membershipStatus: data.membership === 'da_vao_doan' ? 'Đã vào Đoàn' : 'Chưa vào Đoàn',
+        durationMonths: data.duration,
+        amount: data.amount,
+        memo: data.memo,
+        notes,
+        proofImage: uploadedImageBase64
+      };
+
+      try {
+        const response = await fetch(`${API_BASE}/submissions`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          showSuccessReceipt(result);
+          showToast('Đã nộp minh chứng thành công!');
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.detail || 'Cổng nộp phí đang tạm dừng tiếp nhận hoặc dữ liệu không hợp lệ.');
+        }
+      } catch (err) {
+        showToast(err.message, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
+
+    function showSuccessReceipt(record) {
+      document.getElementById('successSummary').innerHTML = `
+        <div class="flex justify-between py-1.5 border-b border-slate-200">
+          <span class="text-slate-500">Họ và tên:</span>
+          <span class="font-bold text-slate-900">${record.fullName}</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-slate-200">
+          <span class="text-slate-500">MSSV:</span>
+          <span class="font-bold text-brand-600">${record.studentId}</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-slate-200">
+          <span class="text-slate-500">Tình trạng:</span>
+          <span class="font-bold text-slate-900">${record.membershipStatus}</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-slate-200">
+          <span class="text-slate-500">Số tiền:</span>
+          <span class="text-brand-600 font-black font-mono">${record.formattedAmount}</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-slate-200">
+          <span class="text-slate-500">Nội dung CK:</span>
+          <span class="font-mono text-slate-900 font-bold">${record.transferMemo}</span>
+        </div>
+        <div class="flex justify-between py-1.5">
+          <span class="text-slate-500">Minh chứng:</span>
+          <span>${record.hasProof ? '<span class="text-emerald-600 font-bold">✓ Đã đính kèm ảnh</span>' : '<span class="text-slate-400">Chưa đính kèm ảnh</span>'}</span>
+        </div>
+      `;
+
+      document.getElementById('successModal').classList.remove('hidden');
+
+      // Reset form fields
+      document.getElementById('feeForm').reset();
+      removeUploadedFile();
+      selectMembershipOption('da_vao_doan');
+    }
+
+    // ==========================================
+    // ROLE 2: QUẢN TRỊ VIÊN (ADMIN AUTH & DASHBOARD)
+    // ==========================================
+    function checkExistingAuth() {
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      const user = sessionStorage.getItem(USER_KEY);
+      
+      const btnGuest = document.getElementById('btnGuestLogin');
+      const groupAdmin = document.getElementById('adminNavGroup');
+
+      if (token && user) {
+        btnGuest.classList.add('hidden');
+        groupAdmin.classList.remove('hidden');
+        document.getElementById('adminUserSessionName').textContent = `${user} (Quản trị viên)`;
+      } else {
+        btnGuest.classList.remove('hidden');
+        groupAdmin.classList.add('hidden');
+      }
+    }
+
+    function openLoginModal() {
+      document.getElementById('loginErrorMsg').classList.add('hidden');
+      document.getElementById('adminLoginModal').classList.remove('hidden');
+      setTimeout(() => document.getElementById('adminPassword').focus(), 100);
+    }
+
+    function openChangePasswordModal() {
+      document.getElementById('currentPasswordInput').value = '';
+      document.getElementById('newPasswordInput').value = '';
+      document.getElementById('confirmNewPasswordInput').value = '';
+      document.getElementById('changePasswordErrorMsg').classList.add('hidden');
+      document.getElementById('changePasswordModal').classList.remove('hidden');
+      setTimeout(() => document.getElementById('currentPasswordInput').focus(), 100);
+    }
+
+    function closeChangePasswordModal() {
+      document.getElementById('changePasswordModal').classList.add('hidden');
+    }
+
+    async function handleChangePassword(event) {
+      event.preventDefault();
+      const currentPassword = document.getElementById('currentPasswordInput').value;
+      const newPassword = document.getElementById('newPasswordInput').value;
+      const confirmPassword = document.getElementById('confirmNewPasswordInput').value;
+      const errorBox = document.getElementById('changePasswordErrorMsg');
+      const btn = document.getElementById('btnChangePasswordSubmit');
+
+      if (newPassword !== confirmPassword) {
+        errorBox.textContent = 'Mật khẩu mới và xác nhận mật khẩu không trùng khớp!';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
+      if (newPassword.length < 6) {
+        errorBox.textContent = 'Mật khẩu mới phải có tối thiểu 6 ký tự!';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      if (!token) {
+        showToast('Phiên làm việc đã hết hạn. Vui lòng đăng nhập lại.', 'error');
+        closeChangePasswordModal();
+        openLoginModal();
+        return;
+      }
+
+      errorBox.classList.add('hidden');
+      const originalHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Đang lưu...`;
+
+      try {
+        const res = await fetch(`${API_BASE}/auth/change-password`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ currentPassword, newPassword })
+        });
+
+        if (res.ok) {
+          showToast('Đổi mật khẩu thành công! Mật khẩu mới đã được lưu an toàn vào cơ sở dữ liệu.');
+          closeChangePasswordModal();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          const msg = err.detail || (err.errors ? Object.values(err.errors).flat().join(', ') : 'Mật khẩu hiện tại không chính xác.');
+          errorBox.textContent = msg;
+          errorBox.classList.remove('hidden');
+        }
+      } catch (err) {
+        errorBox.textContent = 'Lỗi kết nối khi cập nhật mật khẩu.';
+        errorBox.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml;
+      }
+    }
+
+    function closeLoginModal() {
+      document.getElementById('adminLoginModal').classList.add('hidden');
+    }
+
+    async function handleAdminLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('adminUsername').value.trim();
+      const password = document.getElementById('adminPassword').value.trim();
+      const errorDiv = document.getElementById('loginErrorMsg');
+      const submitBtn = document.getElementById('btnLoginSubmit');
+
+      errorDiv.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Đang xác thực...`;
+
+      try {
+        const res = await fetch(`${API_BASE}/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          sessionStorage.setItem(TOKEN_KEY, data.token);
+          sessionStorage.setItem(USER_KEY, data.username);
+          
+          checkExistingAuth();
+          closeLoginModal();
+          showToast(`Xin chào Quản trị viên ${data.username}!`, 'success');
+          
+          openAdminDashboard();
+        } else {
+          const err = await res.json().catch(() => ({}));
+          errorDiv.textContent = err.detail || 'Tên đăng nhập hoặc mật khẩu không chính xác.';
+          errorDiv.classList.remove('hidden');
+        }
+      } catch (err) {
+        errorDiv.textContent = 'Lỗi kết nối đến máy chủ. Vui lòng thử lại sau.';
+        errorDiv.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<i class="fa-solid fa-right-to-bracket"></i> <span>Đăng Nhập Quản Trị</span>`;
+      }
+    }
+
+    function logoutAdmin() {
+      sessionStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(USER_KEY);
+      checkExistingAuth();
+      closeAdminDashboard();
+      showToast('Đã đăng xuất khỏi tài khoản Quản trị viên.');
+    }
+
+    function handleAuthExpired() {
+      sessionStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(USER_KEY);
+      checkExistingAuth();
+      closeAdminDashboard();
+      showToast('Phiên làm việc quản trị viên đã hết hạn. Vui lòng đăng nhập lại.', 'error');
+      openLoginModal();
+    }
+
+    function openAdminDashboard() {
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      if (!token) {
+        openLoginModal();
+        return;
+      }
+      document.getElementById('adminDashboardModal').classList.remove('hidden');
+      refreshAdminData();
+    }
+
+    function closeAdminDashboard() {
+      document.getElementById('adminDashboardModal').classList.add('hidden');
+    }
+
+    async function refreshAdminData() {
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      if (!token) return;
+
+      const statusData = await checkSystemStatus();
+      if (statusData) {
+        selectedFormToggleState = statusData.isFormOpen;
+        setFormStateInput(statusData.isFormOpen);
+        document.getElementById('adminCloseReasonInput').value = statusData.closeReason || '';
+      }
+
+      // Stats
+      try {
+        const statsRes = await fetch(`${API_BASE}/submissions/stats`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (statsRes.status === 401 || statsRes.status === 403) {
+          handleAuthExpired();
+          return;
+        }
+        if (statsRes.ok) {
+          const stats = await statsRes.json();
+          document.getElementById('adminStatTotal').textContent = stats.totalSubmissions;
+          document.getElementById('adminStatMoney').textContent = stats.formattedTotalAmount;
+          document.getElementById('adminStatDoanVien').textContent = stats.totalDoanVien;
+          document.getElementById('adminStatChuaDoan').textContent = stats.totalChuaVaoDoan;
+          document.getElementById('adminStatHasProof').textContent = stats.submissionsWithProof;
+          document.getElementById('statLastUpdated').textContent = `Cập nhật: ${new Date().toLocaleTimeString('vi-VN')}`;
+        }
+      } catch (err) {
+        console.warn('Error fetching stats:', err);
+      }
+
+      // Submissions
+      try {
+        const listRes = await fetch(`${API_BASE}/submissions`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (listRes.ok) {
+          adminCachedSubmissions = await listRes.json();
+          renderAdminTable(adminCachedSubmissions);
+        }
+      } catch (err) {
+        console.warn('Error fetching submissions list:', err);
+      }
+    }
+
+    function filterAdminSubmissions() {
+      const searchVal = (document.getElementById('adminSearchInput').value || '').toLowerCase().trim();
+      const memFilter = document.getElementById('adminMembershipFilter').value;
+      const proofFilter = document.getElementById('adminProofFilter').value;
+
+      const filtered = adminCachedSubmissions.filter(item => {
+        const matchSearch = item.fullName.toLowerCase().includes(searchVal) || 
+                            item.studentId.toLowerCase().includes(searchVal) ||
+                            (item.notes || '').toLowerCase().includes(searchVal);
+        
+        const matchMem = memFilter === 'all' || item.membershipStatus === memFilter;
+        const matchProof = proofFilter === 'all' || 
+                           (proofFilter === 'yes' && item.hasProof) ||
+                           (proofFilter === 'no' && !item.hasProof);
+
+        return matchSearch && matchMem && matchProof;
+      });
+
+      renderAdminTable(filtered);
+    }
+
+    function renderAdminTable(items) {
+      const tbody = document.getElementById('adminTableBody');
+      const emptyMsg = document.getElementById('adminEmptyMsg');
+
+      if (!items || items.length === 0) {
+        tbody.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
+      }
+
+      emptyMsg.classList.add('hidden');
+      tbody.innerHTML = items.map(item => `
+        <tr class="hover:bg-brand-50/40 transition-colors">
+          <td class="py-3 px-4 text-slate-400 text-[11px] whitespace-nowrap">${item.formattedDate}</td>
+          <td class="py-3 px-4 font-extrabold text-slate-900 whitespace-nowrap">${item.fullName}</td>
+          <td class="py-3 px-4 font-mono font-black text-brand-600 whitespace-nowrap">${item.studentId}</td>
+          <td class="py-3 px-4 whitespace-nowrap">
+            <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+              item.membershipStatus === 'Đã vào Đoàn' 
+                ? 'bg-rose-50 text-rose-700 border border-rose-200' 
+                : 'bg-amber-50 text-amber-700 border border-amber-200'
+            }">
+              ${item.membershipStatus}
+            </span>
+          </td>
+          <td class="py-3 px-4 font-black text-brand-600 font-mono whitespace-nowrap">${item.formattedAmount}</td>
+          <td class="py-3 px-4 font-mono text-[11px] text-slate-600 max-w-xs truncate" title="${item.transferMemo}">
+            ${item.transferMemo}
+          </td>
+          <td class="py-3 px-4 text-slate-500 max-w-xs truncate" title="${item.notes || ''}">
+            ${item.notes || '-'}
+          </td>
+          <td class="py-3 px-4 text-center whitespace-nowrap">
+            ${item.hasProof ? `
+              <button 
+                type="button" 
+                onclick="openLightbox('${item.proofImage}', '${item.fullName} (${item.studentId})')" 
+                class="px-2.5 py-1 bg-brand-50 text-brand-600 hover:bg-brand-100 rounded-lg font-bold text-[11px] transition inline-flex items-center gap-1 border border-brand-200 shadow-2xs">
+                <i class="fa-solid fa-eye"></i> Xem bill
+              </button>
+            ` : '<span class="text-slate-300">-</span>'}
+          </td>
+          <td class="py-3 px-4 text-center whitespace-nowrap">
+            <button 
+              type="button" 
+              onclick="deleteSubmissionAdmin('${item.id}')" 
+              title="Xoá lượt này" 
+              class="w-7 h-7 rounded-lg text-rose-500 hover:bg-rose-50 hover:text-rose-700 transition inline-flex items-center justify-center">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function deleteSubmissionAdmin(id) {
+      if (!confirm('Bạn có chắc chắn muốn xoá lượt nộp này khỏi danh sách đối soát?')) return;
+
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      try {
+        const res = await fetch(`${API_BASE}/submissions/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (res.status === 401 || res.status === 403) {
+          handleAuthExpired();
+          return;
+        }
+        if (res.ok) {
+          showToast('Đã xoá lượt nộp thành công!');
+          refreshAdminData();
+        } else {
+          showToast('Không thể xoá lượt nộp.', 'error');
+        }
+      } catch (err) {
+        showToast('Lỗi khi xoá dữ liệu.', 'error');
+      }
+    }
+
+    async function adminClearAll() {
+      if (!confirm('CẢNH BÁO NGUY HIỂM: Bạn có chắc chắn muốn xoá toàn bộ danh sách đã lưu? Hành động này không thể hoàn tác!')) return;
+
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      try {
+        const res = await fetch(`${API_BASE}/submissions`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (res.status === 401 || res.status === 403) {
+          handleAuthExpired();
+          return;
+        }
+        if (res.ok) {
+          showToast('Đã xoá toàn bộ dữ liệu đối soát!');
+          refreshAdminData();
+        } else {
+          showToast('Không thể xoá dữ liệu.', 'error');
+        }
+      } catch (err) {
+        showToast('Lỗi khi xoá toàn bộ dữ liệu.', 'error');
+      }
+    }
+
+    async function exportAdminCSV() {
+      const token = sessionStorage.getItem(TOKEN_KEY);
+      try {
+        const response = await fetch(`${API_BASE}/submissions/export-csv`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.status === 401 || response.status === 403) {
+          handleAuthExpired();
+          return;
+        }
+
+        if (response.ok) {
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = `Bao_Cao_Doi_Soat_Doan_Phi_${Date.now()}.csv`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          showToast('Đã tải xuống file CSV báo cáo!');
+        } else {
+          showToast('Lỗi khi xuất file báo cáo.', 'error');
+        }
+      } catch (err) {
+        showToast('Không thể tải file báo cáo từ máy chủ.', 'error');
+      }
+    }
+
+    // ==========================================
+    // BANK APPS SELECTOR (30 NGÂN HÀNG)
+    // ==========================================
+    const DEFAULT_BANK_APPS = [
+      { appId: 'tcb', appName: 'Techcombank', bankName: 'Ngân hàng TMCP Kỹ thương Việt Nam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/tcb-android.webp', recommended: true },
+      { appId: 'mb', appName: 'MB Bank', bankName: 'Ngân hàng TMCP Quân đội', appLogo: 'https://cdn.vietqr.io/bank-app-icon/mb-android.webp', recommended: true },
+      { appId: 'pvcb', appName: 'PVcomBank', bankName: 'Ngân hàng TMCP Đại Chúng Việt Nam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/pvcb-android.webp', recommended: true },
+      { appId: 'vcb', appName: 'Vietcombank', bankName: 'Ngân hàng TMCP Ngoại Thương Việt Nam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/vcb-android.webp', recommended: true },
+      { appId: 'icb', appName: 'VietinBank', bankName: 'Ngân hàng TMCP Công thương Việt Nam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/icb-android.webp', recommended: true },
+      { appId: 'bidv', appName: 'BIDV', bankName: 'Ngân hàng TMCP Đầu tư và Phát triển VN', appLogo: 'https://cdn.vietqr.io/bank-app-icon/bidv-android.webp', recommended: true },
+      
+      { appId: 'abb', appName: 'ABBank', bankName: 'Ngân hàng TMCP An Bình', appLogo: 'https://cdn.vietqr.io/bank-app-icon/abb-android.webp' },
+      { appId: 'acb', appName: 'ACB', bankName: 'Ngân hàng TMCP Á Châu', appLogo: 'https://cdn.vietqr.io/bank-app-icon/acb-android.webp' },
+      { appId: 'vba', appName: 'Agribank', bankName: 'Ngân hàng Nông nghiệp và PTNT VN', appLogo: 'https://cdn.vietqr.io/bank-app-icon/vba-android.webp' },
+      { appId: 'vpb', appName: 'VPBank', bankName: 'Ngân hàng TMCP Việt Nam Thịnh Vượng', appLogo: 'https://cdn.vietqr.io/bank-app-icon/vpb-android.webp' },
+      { appId: 'tpb', appName: 'TPBank', bankName: 'Ngân hàng TMCP Tiên Phong', appLogo: 'https://cdn.vietqr.io/bank-app-icon/tpb-android.webp' },
+      { appId: 'ocb', appName: 'OCB', bankName: 'Ngân hàng TMCP Phương Đông', appLogo: 'https://cdn.vietqr.io/bank-app-icon/ocb-android.webp' },
+      { appId: 'shb', appName: 'SHB', bankName: 'Ngân hàng TMCP Sài Gòn - Hà Nội', appLogo: 'https://cdn.vietqr.io/bank-app-icon/shb-android.webp' },
+      { appId: 'hdb', appName: 'HDBank', bankName: 'Ngân hàng TMCP Phát triển TP.HCM', appLogo: 'https://cdn.vietqr.io/bank-app-icon/hdb-android.webp' },
+      { appId: 'cake', appName: 'CAKE', bankName: 'Ngân hàng số CAKE by VPBank', appLogo: 'https://cdn.vietqr.io/bank-app-icon/cake-android.webp' },
+      { appId: 'timo', appName: 'Timo', bankName: 'Ngân hàng số Timo by BVBank', appLogo: 'https://cdn.vietqr.io/bank-app-icon/timo-android.webp' },
+      { appId: 'vib-2', appName: 'MyVIB', bankName: 'Ngân hàng TMCP Quốc tế Việt Nam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/vib-2-android.webp' },
+      { appId: 'seab', appName: 'SeABank', bankName: 'Ngân hàng TMCP Đông Nam Á', appLogo: 'https://cdn.vietqr.io/bank-app-icon/seab-android.webp' },
+      { appId: 'lpb', appName: 'LPBank', bankName: 'Ngân hàng TMCP Bưu Điện Liên Việt', appLogo: 'https://cdn.vietqr.io/bank-app-icon/lpb-android.webp' },
+      { appId: 'scb', appName: 'SCB', bankName: 'Ngân hàng TMCP Sài Gòn', appLogo: 'https://cdn.vietqr.io/bank-app-icon/scb-android.webp' },
+      { appId: 'eib', appName: 'Eximbank', bankName: 'Ngân hàng TMCP Xuất Nhập khẩu VN', appLogo: 'https://cdn.vietqr.io/bank-app-icon/eib-android.webp' },
+      { appId: 'nab', appName: 'Nam A Bank', bankName: 'Ngân hàng TMCP Nam Á', appLogo: 'https://cdn.vietqr.io/bank-app-icon/nab-android.webp' },
+      { appId: 'shbvn', appName: 'Shinhan SOL', bankName: 'Ngân hàng TNHH MTV Shinhan VN', appLogo: 'https://cdn.vietqr.io/bank-app-icon/shbvn-android.webp' },
+      { appId: 'klb', appName: 'KienlongBank', bankName: 'Ngân hàng TMCP Kiên Long', appLogo: 'https://cdn.vietqr.io/bank-app-icon/klb-android.webp' },
+      { appId: 'bvb', appName: 'BAOVIET', bankName: 'Ngân hàng TMCP Bảo Việt', appLogo: 'https://cdn.vietqr.io/bank-app-icon/bvb-android.webp' },
+      { appId: 'vab', appName: 'Vietbank', bankName: 'Ngân hàng TMCP Việt Á', appLogo: 'https://cdn.vietqr.io/bank-app-icon/vab-android.webp' },
+      { appId: 'ncb', appName: 'NCB', bankName: 'Ngân hàng TMCP Quốc Dân', appLogo: 'https://cdn.vietqr.io/bank-app-icon/ncb-android.webp' },
+      { appId: 'coopbank', appName: 'Co-opBank', bankName: 'Ngân hàng Hợp tác xã Việt Nam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/coopbank-android.webp' },
+      { appId: 'wvn', appName: 'Woori Bank', bankName: 'Ngân hàng TNHH MTV Woori VN', appLogo: 'https://cdn.vietqr.io/bank-app-icon/wvn-android.webp' },
+      { appId: 'cimb', appName: 'CIMB', bankName: 'Octo by CIMB Vietnam', appLogo: 'https://cdn.vietqr.io/bank-app-icon/cimb-android.webp' }
+    ];
+
+    let currentBankApps = [...DEFAULT_BANK_APPS];
+    let selectedBankApp = null;
+
+    function fetchOnlineBankApps() {
+      fetch('https://api.vietqr.io/v2/android-app-deeplinks')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.apps && Array.isArray(data.apps)) {
+            const recommendedIds = ['tcb', 'mb', 'pvcb', 'vcb', 'icb', 'bidv'];
+            const merged = data.apps.map(app => ({
+              appId: app.appId,
+              appName: app.appName.replace(/ Mobile| SmartBanking| iPay| ONE| Plus| NEO| Digital Plus| EDigi| Open Banking/gi, ''),
+              bankName: app.bankName || app.appName,
+              appLogo: app.appLogo,
+              recommended: recommendedIds.includes(app.appId)
+            }));
+            if (merged.length > 0) {
+              currentBankApps = merged;
+              renderBankApps();
+            }
+          }
+        })
+        .catch(() => {});
+    }
+
+    function openBankSelectorModal() {
+      if (!isFormGloballyOpen) {
+        showToast('Cổng thu đoàn phí đang đóng.', 'error');
+        return;
+      }
+      const modal = document.getElementById('bankSelectorModal');
+      const searchInput = document.getElementById('bankSearchInput');
+      if (searchInput) searchInput.value = '';
+      renderBankApps();
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        if (searchInput && window.innerWidth > 640) searchInput.focus();
+      }, 100);
+    }
+
+    function closeBankSelectorModal(event) {
+      if (event && event.target && event.target.id !== 'bankSelectorModal' && !event.target.closest('button')) {
+        return;
+      }
+      document.getElementById('bankSelectorModal').classList.add('hidden');
+    }
+
+    function renderBankApps(filterText = '') {
+      const recGrid = document.getElementById('recommendedBankGrid');
+      const otherGrid = document.getElementById('otherBankGrid');
+      const recSection = document.getElementById('recommendedSection');
+      const otherSection = document.getElementById('otherBanksSection');
+      const emptyMsg = document.getElementById('emptyBankSearchResult');
+
+      if (!recGrid || !otherGrid) return;
+
+      const filter = (filterText || '').toLowerCase().trim();
+      const filtered = currentBankApps.filter(app => {
+        return app.appName.toLowerCase().includes(filter) ||
+               app.bankName.toLowerCase().includes(filter) ||
+               app.appId.toLowerCase().includes(filter);
+      });
+
+      if (filtered.length === 0) {
+        recSection.classList.add('hidden');
+        otherSection.classList.add('hidden');
+        emptyMsg.classList.remove('hidden');
+        return;
+      }
+
+      emptyMsg.classList.add('hidden');
+
+      let recList = [];
+      let otherList = [];
+
+      if (filter) {
+        recSection.classList.add('hidden');
+        otherSection.classList.remove('hidden');
+        const header = otherSection.querySelector('h4');
+        if (header) header.textContent = `Kết quả tìm kiếm (${filtered.length})`;
+        otherList = filtered;
+      } else {
+        recSection.classList.remove('hidden');
+        otherSection.classList.remove('hidden');
+        const header = otherSection.querySelector('h4');
+        if (header) header.innerHTML = `<i class="fa-solid fa-building-columns text-slate-400"></i> Ứng dụng khác`;
+        recList = filtered.filter(a => a.recommended);
+        otherList = filtered.filter(a => !a.recommended);
+      }
+
+      recGrid.innerHTML = recList.map(app => createBankCardHTML(app)).join('');
+      otherGrid.innerHTML = otherList.map(app => createBankCardHTML(app)).join('');
+    }
+
+    function createBankCardHTML(app) {
+      const isSelected = selectedBankApp && selectedBankApp.appId === app.appId;
+      return `
+        <div 
+          onclick="selectBankApp('${app.appId}')"
+          class="group relative flex flex-col items-center justify-center p-3 rounded-2xl border transition-all duration-300 cursor-pointer text-center bg-white ${
+            isSelected 
+              ? 'border-brand-600 ring-2 ring-brand-500/20 bg-brand-50/50 shadow-md' 
+              : 'border-slate-200/90 hover:border-brand-500 hover:bg-brand-50/30 hover:shadow-lg hover:-translate-y-0.5'
+          } active:scale-95">
+          <div class="w-12 h-12 rounded-2xl overflow-hidden mb-2 p-1 bg-white flex items-center justify-center border border-slate-100 group-hover:scale-105 transition-transform shadow-2xs">
+            <img 
+              src="${app.appLogo}" 
+              alt="${app.appName}"
+              loading="lazy"
+              class="w-full h-full object-contain"
+              onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(app.appName)}&background=005baa&color=fff&rounded=true'"
+            />
+          </div>
+          <span class="text-xs font-black text-slate-900 leading-tight line-clamp-1 group-hover:text-brand-600 transition-colors">
+            ${app.appName}
+          </span>
+          <span class="text-[10px] text-slate-400 font-medium line-clamp-1 mt-0.5">
+            ${app.bankName}
+          </span>
+          ${isSelected ? `
+            <div class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center text-[10px] shadow-sm">
+              <i class="fa-solid fa-check"></i>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    function filterBankApps() {
+      const input = document.getElementById('bankSearchInput');
+      renderBankApps(input ? input.value : '');
+    }
+
+    function selectBankApp(appId) {
+      const app = currentBankApps.find(a => a.appId === appId) || DEFAULT_BANK_APPS.find(a => a.appId === appId);
+      if (!app) return;
+
+      selectedBankApp = app;
+      updateSelectedBankBar(app);
+
+      const data = calculateCurrentValues();
+      copyToClipboard(data.memo, `Đã chép nội dung CK! Đang mở ứng dụng ${app.appName}...`);
+
+      closeBankSelectorModal();
+
+      setTimeout(() => {
+        executeBankAppLaunch(app.appId);
+      }, 400);
+    }
+
+    function updateSelectedBankBar(app) {
+      const bar = document.getElementById('selectedBankBar');
+      const logo = document.getElementById('selectedBankBarLogo');
+      const name = document.getElementById('selectedBankBarName');
+      const btnText = document.getElementById('openBankModalBtnText');
+
+      if (bar && logo && name) {
+        bar.classList.remove('hidden');
+        logo.src = app.appLogo;
+        name.textContent = app.appName;
+      }
+      if (btnText) {
+        btnText.textContent = `Mở ${app.appName}`;
+      }
+    }
+
+    function executeBankAppLaunch(appId) {
+      window.location.href = `https://dl.vietqr.io/pay?app=${appId}`;
+    }
+
+    function triggerDirectAppLaunch() {
+      if (selectedBankApp) {
+        selectBankApp(selectedBankApp.appId);
+      } else {
+        openBankSelectorModal();
+      }
+    }
+
+    // Drag and drop event listeners
+    const dropZone = document.getElementById('dropZone');
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        if (isFormGloballyOpen) {
+          dropZone.classList.add('border-brand-500', 'bg-brand-50/50', 'ring-4', 'ring-brand-500/10');
+        }
+      }, false);
+    });
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-brand-500', 'bg-brand-50/50', 'ring-4', 'ring-brand-500/10');
+      }, false);
+    });
+    dropZone.addEventListener('drop', (e) => {
+      if (!isFormGloballyOpen) return;
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files.length) {
+        handleFileUpload({ target: { files: files } });
+      }
+    });
+
+    // Window load initialization
+    window.onload = function() {
+      updateFeeAndQR();
+      checkExistingAuth();
+      checkSystemStatus();
+      renderBankApps();
+      fetchOnlineBankApps();
+    };
+  </script>
+</body>
+</html>

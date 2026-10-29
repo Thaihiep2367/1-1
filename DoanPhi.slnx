@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DoanPhi.API/DoanPhi.API.csproj" />
+    <Project Path="src/DoanPhi.Application/DoanPhi.Application.csproj" />
+    <Project Path="src/DoanPhi.Domain/DoanPhi.Domain.csproj" />
+    <Project Path="src/DoanPhi.Infrastructure/DoanPhi.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DoanPhi.Tests/DoanPhi.Tests.csproj" />
+  </Folder>
+</Solution>

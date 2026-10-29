@@ -1,0 +1,22 @@
+{
+  "name": "thu-thap-thong-tin-dong-doan-phi",
+  "version": "1.0.0",
+  "description": "Website thu thập thông tin và đối soát nộp Đoàn phí - Hội phí sinh viên năm học 2026 - 2027",
+  "scripts": {
+    "dev": "vite --host --port 3000 --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "doan-phi",
+    "hoi-phi",
+    "vietqr",
+    "sinh-vien"
+  ],
+  "author": "Doan - Hoi Sinh Vien",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
